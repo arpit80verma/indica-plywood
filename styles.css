@@ -1,0 +1,71 @@
+/* ============ INDICA PLYWOOD ============ */
+:root{
+  --bg:#13070300;
+  --ink:#1a0f08;
+  --cream:#f6ecd9;
+  --cream-2:#efe1c4;
+  --paper:#fbf5e8;
+  --wood-1:#3a1e10;
+  --wood-2:#5a2d15;
+  --wood-3:#7a3b1a;
+  --wood-4:#a8541f;
+  --amber:#E8A75A;
+  --amber-2:#d7873a;
+  --amber-3:#c46a23;
+  --line: rgba(255,235,205,.14);
+  --line-d: rgba(20,10,5,.12);
+  --rad: 18px;
+  /* Themed surfaces (default = dark wood) */
+  --paper-bg: var(--paper);
+  --paper-ink: var(--ink);
+  --dark-bg: #1a0d06;
+  --dark-bg-2: #2c1709;
+  --dark-ink: var(--cream);
+  --section-paper: var(--paper);
+  --section-dark: #1a0d06;
+  --section-dark-grad: linear-gradient(180deg,#1a0d06 0%,#2c1709 100%);
+  --products-grad: linear-gradient(180deg,#1a0d06,#0f0603);
+  --nav-bg: rgba(15,7,3,.78);
+  --nav-ink: var(--cream);
+  --card-bg: #fff;
+  --card-border: rgba(122,59,26,.1);
+  --shimmer-color: rgba(232,167,90,.18);
+}
+/* DAY MODE — cream paper aesthetic */
+html[data-theme="day"]{
+  --paper-bg: #faf3e2;
+  --paper-ink: #2a1408;
+  --section-paper: #faf3e2;
+  --section-dark: #f0e3c6;
+  --section-dark-grad: linear-gradient(180deg,#f4e7cb 0%,#e8d6a8 100%);
+  --products-grad: linear-gradient(180deg,#efe1c0,#e3d09c);
+  --dark-ink: #2a1408;
+  --cream: #2a1408;
+  --cream-2: #3a1f10;
+  --line: rgba(58,30,16,.16);
+  --nav-bg: rgba(250,243,226,.82);
+  --nav-ink: #2a1408;
+  --card-bg: #fff8e4;
+  --card-border: rgba(122,59,26,.22);
+  --shimmer-color: rgba(196,106,35,.22);
+}
+/* Smooth transitions on theme swap */
+body, .nav, .factory, .products, .certs, .why, .about, .feat, .product, .stat, .tm-card, .spec-strip, .cert{
+  transition: background .5s ease, color .5s ease, border-color .5s ease;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  color:var(--paper-ink);
+  background:var(--paper-bg);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  line-height:1.55;
+  font-size:16px;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+em{font-style:italic;font-family:'Fraunces',serif;font-weight:500}
+sup{font-size:.45em;vertical-align:super;margin-left:2px;color:var(--amber)}
+
