@@ -285,6 +285,39 @@ section{padding:140px 44px;position:relative}
 .link-arrow span{transition:transform .3s}
 .link-arrow:hover span{transform:translateX(5px)}
 
+/* ============ CERTS ============ */
+.certs{background:var(--section-dark);color:var(--dark-ink);padding:120px 44px}
+.certs-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:start}
+.tm-block{grid-column:1/-1;margin-top:100px;border-top:1px solid rgba(232,167,90,.18);padding-top:80px}
+.tm-head{max-width:760px;margin-bottom:42px}
+.tm-title{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(28px,3.4vw,42px);line-height:1.1;letter-spacing:-.02em;margin-top:14px;color:var(--cream)}
+.tm-title em{font-style:italic;color:var(--amber)}
+.tm-lede{color:rgba(246,236,217,.65);margin-top:16px;max-width:62ch;font-size:16px;line-height:1.6}
+.tm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tm-card{display:flex;flex-direction:column;background:#221208;border:1px solid rgba(232,167,90,.22);border-radius:14px;overflow:hidden;text-decoration:none;color:var(--cream);transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease}
+.tm-card:hover{transform:translateY(-4px);border-color:rgba(232,167,90,.55);box-shadow:0 24px 50px -28px rgba(232,167,90,.45)}
+.tm-thumb{aspect-ratio:1100/1500;background:#f4e9d6;overflow:hidden;border-bottom:1px solid rgba(232,167,90,.2)}
+.tm-thumb img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;filter:contrast(1.05)}
+.tm-meta{padding:18px 20px 20px;display:flex;flex-direction:column;gap:4px}
+.tm-meta b{font-family:'Fraunces',serif;font-size:20px;font-weight:500;letter-spacing:-.01em}
+.tm-meta span{font-size:11.5px;letter-spacing:.08em;color:rgba(246,236,217,.55);text-transform:uppercase}
+.tm-meta small{margin-top:8px;color:var(--amber);font-size:12.5px;letter-spacing:.04em}
+.spec-strip{margin-top:42px;display:grid;grid-template-columns:1fr 1.4fr;gap:0;background:linear-gradient(135deg,#2a1408,#1a0c05);border:1px solid rgba(232,167,90,.22);border-radius:14px;overflow:hidden}
+.spec-chip{padding:30px 34px;display:flex;flex-direction:column;gap:6px;border-right:1px solid rgba(232,167,90,.18)}
+.spec-chip>span{font-size:11px;letter-spacing:.14em;color:var(--amber);text-transform:uppercase}
+.spec-chip b{font-family:'Fraunces',serif;font-size:22px;font-weight:500;color:var(--cream);margin-top:4px}
+.spec-chip em{font-style:normal;font-family:'Fraunces',serif;font-size:34px;color:var(--amber);font-weight:500;letter-spacing:-.01em;line-height:1.05;margin-top:6px}
+.spec-chip small{margin-top:10px;color:rgba(246,236,217,.6);font-size:12px;line-height:1.5;letter-spacing:.02em}
+.spec-evidence{position:relative;background:#f6ecd6;padding:18px}
+.spec-evidence img{width:100%;height:auto;display:block;border-radius:6px;border:1px solid rgba(0,0,0,.08)}
+.spec-evidence span{position:absolute;left:24px;bottom:14px;background:rgba(26,12,5,.85);color:#f6ecd6;padding:5px 10px;border-radius:6px;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase}
+.certs-text p{margin-top:22px;color:rgba(246,236,217,.7);font-size:17px;max-width:50ch}
+.certs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cert{aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:1px solid rgba(232,167,90,.2);border-radius:var(--rad);padding:24px;background:radial-gradient(circle at top,rgba(232,167,90,.06),transparent 70%);transition:all .4s}
+.cert:hover{border-color:var(--amber);transform:translateY(-4px);background:radial-gradient(circle at top,rgba(232,167,90,.12),transparent 70%)}
+.cert b{font-family:'Fraunces',serif;font-size:30px;font-weight:600;color:var(--amber);letter-spacing:-.01em}
+.cert span{font-size:11.5px;letter-spacing:.06em;color:rgba(246,236,217,.55);margin-top:8px;line-height:1.4}
+
 /* ============ PRODUCT CARD SHIMMER (cursor-following) ============ */
 .product{position:relative}
 .product::before{
