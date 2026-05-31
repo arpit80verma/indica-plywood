@@ -231,6 +231,155 @@ section{padding:140px 44px;position:relative}
 .stat sup{color:var(--amber);font-size:24px}
 .stat span{display:block;margin-top:14px;font-size:13px;color:rgba(246,236,217,.65);letter-spacing:.04em;line-height:1.5}
 
+/* ============ FACTORY ============ */
+.factory{background:var(--section-dark-grad);color:var(--dark-ink)}
+.section-head.light{color:var(--cream)}
+.process{max-width:1280px;margin:0 auto;position:relative}
+.process-line{position:absolute;left:0;right:0;top:50px;height:1px;background:linear-gradient(90deg,transparent,var(--amber) 10%,var(--amber) 90%,transparent);opacity:.4}
+.steps{list-style:none;display:grid;grid-template-columns:repeat(7,1fr);gap:18px;position:relative}
+.step{position:relative;padding-top:80px}
+.step::before{content:"";position:absolute;top:46px;left:50%;width:10px;height:10px;background:var(--amber);border-radius:50%;transform:translateX(-50%);box-shadow:0 0 0 6px rgba(232,167,90,.12)}
+.step .num{font-family:'Fraunces',serif;color:var(--amber);font-size:14px;letter-spacing:.2em;display:block;margin-bottom:10px}
+.step h4{font-family:'Fraunces',serif;font-size:18px;font-weight:600;margin-bottom:8px;letter-spacing:-.01em}
+.step p{font-size:13px;color:rgba(246,236,217,.6);line-height:1.55}
+
+/* ============ PROCESS CAROUSEL ============ */
+.scrolly{position:relative;max-width:1280px;margin:80px auto 0;padding:30px 24px 40px;touch-action:pan-y}
+.scrolly-sticky{position:relative;display:flex;align-items:center;justify-content:center}
+.scrolly-stage{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;width:100%;max-width:1180px;padding:0}
+.stage-svg{width:100%;height:auto;max-height:58vh;filter:drop-shadow(0 30px 60px rgba(0,0,0,.45))}
+.stage-svg .sg{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .8s cubic-bezier(.4,0,.2,1);pointer-events:none}
+.stage-svg .sg.active{opacity:1;transform:translateY(0);pointer-events:auto}
+.scrolly-caption{color:var(--dark-ink);max-width:46ch}
+.scrolly-caption .sc-num{font-family:'Fraunces',serif;font-size:13px;letter-spacing:.32em;color:var(--amber);display:block;margin-bottom:18px;transition:opacity .35s ease, transform .35s ease}
+.scrolly-caption .sc-title{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(30px,4.2vw,52px);line-height:1.05;letter-spacing:-.025em;margin-bottom:18px;transition:opacity .35s ease, transform .35s ease}
+.scrolly-caption .sc-body{font-size:17px;line-height:1.7;color:color-mix(in srgb, var(--dark-ink) 70%, transparent);margin-bottom:28px;min-height:4em;transition:opacity .35s ease, transform .35s ease}
+.scrolly-caption .sc-prog{height:2px;background:rgba(232,167,90,.18);border-radius:2px;overflow:hidden;max-width:280px}
+.scrolly-caption .sc-prog i{display:block;height:100%;background:linear-gradient(90deg,var(--amber),var(--amber-3));transition:width .6s cubic-bezier(.4,0,.2,1)}
+
+/* Controls */
+.sc-controls{display:flex;align-items:center;gap:14px;margin-top:30px;flex-wrap:wrap}
+.sc-btn{width:42px;height:42px;border-radius:50%;border:1px solid rgba(232,167,90,.35);background:transparent;color:var(--amber);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .3s ease,background .3s ease,border-color .3s ease,opacity .3s ease;position:relative;flex-shrink:0}
+.sc-btn:hover{background:rgba(232,167,90,.12);border-color:var(--amber);transform:scale(1.05)}
+.sc-btn:active{transform:scale(.95)}
+.sc-btn svg{width:18px;height:18px}
+.sc-play{margin-left:auto}
+.sc-play .ic-play{display:none}
+.sc-play[data-playing="false"] .ic-pause{display:none}
+.sc-play[data-playing="false"] .ic-play{display:block}
+.sc-dots{display:inline-flex;gap:10px;align-items:center}
+.sc-dot{width:9px;height:9px;border-radius:50%;border:1px solid rgba(232,167,90,.45);background:transparent;cursor:pointer;padding:0;transition:all .3s ease}
+.sc-dot:hover{border-color:var(--amber)}
+.sc-dot.active{background:var(--amber);border-color:var(--amber);transform:scale(1.25);box-shadow:0 0 0 4px rgba(232,167,90,.18)}
+
+html[data-theme="day"] .sc-btn{border-color:rgba(196,106,35,.45);color:#c46a23}
+html[data-theme="day"] .sc-btn:hover{background:rgba(196,106,35,.12);border-color:#c46a23}
+html[data-theme="day"] .sc-dot{border-color:rgba(196,106,35,.5)}
+html[data-theme="day"] .sc-dot.active{background:#c46a23;border-color:#c46a23;box-shadow:0 0 0 4px rgba(196,106,35,.16)}
+
+/* Stage-specific micro-animations when active */
+/* 01 Veneer Selection */
+.sg-01 .log{opacity:0;transform-box:fill-box;transform-origin:center bottom}
+.sg-01 .log-body{transform-box:fill-box;transform-origin:center}
+.sg-01.active .log-a{animation:logRoll 1.2s cubic-bezier(.3,.1,.2,1) .1s both}
+.sg-01.active .log-b{animation:logRoll 1.2s cubic-bezier(.3,.1,.2,1) .35s both}
+.sg-01.active .log-a .log-body{animation:logBob 4.2s ease-in-out 1.4s infinite}
+.sg-01.active .log-b .log-body{animation:logBob 4.2s ease-in-out 1.7s infinite}
+.sg-01.active .log-a .rings .r1{animation:ringPulse 2.6s ease-out 1.6s infinite;transform-box:fill-box;transform-origin:center}
+.sg-01.active .log-a .rings .r2{animation:ringPulse 2.6s ease-out 1.8s infinite;transform-box:fill-box;transform-origin:center}
+.sg-01.active .log-a .rings .r3{animation:ringPulse 2.6s ease-out 2.0s infinite;transform-box:fill-box;transform-origin:center}
+.sg-01.active .log-b .rings .r1{animation:ringPulse 2.6s ease-out 1.9s infinite;transform-box:fill-box;transform-origin:center}
+.sg-01.active .log-b .rings .r2{animation:ringPulse 2.6s ease-out 2.1s infinite;transform-box:fill-box;transform-origin:center}
+.sg-01 .peel{opacity:0;transform-box:fill-box;transform-origin:left center}
+.sg-01.active .peel{animation:peelOut 2.6s ease-in-out 1.4s infinite}
+.sg-01 .chip{opacity:0;transform-box:fill-box;transform-origin:center}
+.sg-01.active .chip{animation:chipFall 3s ease-in 1.2s infinite}
+.sg-01.active .chip.c2{animation-delay:1.6s;animation-duration:3.4s}
+.sg-01.active .chip.c3{animation-delay:2.0s;animation-duration:2.8s}
+.sg-01.active .chip.c4{animation-delay:1.4s;animation-duration:3.2s}
+.sg-01.active .chip.c5{animation-delay:2.4s;animation-duration:3.0s}
+.sg-01 .sp{opacity:0}
+.sg-01.active .sp{animation:speckDrift 5s ease-in-out 1.5s infinite}
+.sg-01.active .specks .sp:nth-child(2){animation-delay:2.1s}
+.sg-01.active .specks .sp:nth-child(3){animation-delay:2.8s}
+.sg-01.active .specks .sp:nth-child(4){animation-delay:1.9s}
+.sg-01.active .specks .sp:nth-child(5){animation-delay:3.2s}
+@keyframes logRoll{0%{opacity:0;transform:translateX(-340px) rotate(-360deg)}60%{opacity:1}100%{opacity:1;transform:translateX(0) rotate(0)}}
+@keyframes logBob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-3px) rotate(.4deg)}}
+@keyframes ringPulse{0%{transform:scale(.4);opacity:0}30%{opacity:.9}100%{transform:scale(1.3);opacity:0}}
+@keyframes peelOut{0%{opacity:0;transform:translateX(0) scaleX(.2)}25%{opacity:1}90%{opacity:1;transform:translateX(40px) scaleX(1.1)}100%{opacity:0;transform:translateX(60px) scaleX(1.2)}}
+@keyframes chipFall{0%{opacity:0;transform:translate(0,0) rotate(0)}10%{opacity:1}90%{opacity:1}100%{opacity:0;transform:translate(20px,170px) rotate(540deg)}}
+@keyframes speckDrift{0%,100%{opacity:0;transform:translateY(0)}50%{opacity:.8;transform:translateY(-22px)}}
+
+.sg-02.active .vapor circle{animation:vapor 3s ease-in-out infinite}
+.sg-03.active .resin-drop{animation:dropPulse 1.6s ease-in-out infinite}
+.sg-04.active .layer{animation:layerSlide .9s cubic-bezier(.4,0,.2,1) both}
+.sg-04.active .layer:nth-child(2){animation-delay:.08s}
+.sg-04.active .layer:nth-child(3){animation-delay:.16s}
+.sg-04.active .layer:nth-child(4){animation-delay:.24s}
+.sg-04.active .layer:nth-child(5){animation-delay:.32s}
+.sg-05.active .press-top{animation:pressDown 2s ease-in-out infinite}
+.sg-05.active .press-bot{animation:pressUp 2s ease-in-out infinite}
+.sg-05.active .heat path{animation:heatRise 1.6s ease-in-out infinite;opacity:0}
+.sg-06.active .sander{animation:sand 2.4s ease-in-out infinite}
+.sg-06.active .dust circle{animation:dustFloat 2s ease-in-out infinite}
+.sg-07.active .truck{animation:truckIn 1.8s cubic-bezier(.3,.1,.2,1) both}
+.sg-07.active .speed path{animation:speedLines .8s ease-out infinite}
+@keyframes vapor{0%,100%{transform:translateY(0);opacity:.4}50%{transform:translateY(-14px);opacity:.8}}
+@keyframes dropPulse{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(6px) scale(1.04)}}
+@keyframes layerSlide{from{transform:translate(-60px,0);opacity:0}}
+@keyframes pressDown{0%,100%{transform:translateY(0)}50%{transform:translateY(28px)}}
+@keyframes pressUp{0%,100%{transform:translateY(0)}50%{transform:translateY(-22px)}}
+@keyframes heatRise{0%{transform:translateY(0);opacity:0}40%{opacity:.8}100%{transform:translateY(-16px);opacity:0}}
+@keyframes sand{0%{transform:translateX(120px)}50%{transform:translateX(480px)}100%{transform:translateX(120px)}}
+@keyframes dustFloat{0%,100%{transform:translateY(0);opacity:.3}50%{transform:translateY(-10px);opacity:.9}}
+@keyframes truckIn{from{transform:translateX(-280px)}to{transform:translateX(0)}}
+@keyframes speedLines{0%{transform:translateX(0);opacity:.8}100%{transform:translateX(-30px);opacity:0}}
+
+/* Day-mode polish */
+html[data-theme="day"] .stat{color:#2a1408;background:linear-gradient(160deg,#fff3d8,#f0dca8)}
+html[data-theme="day"] .stat b{color:#c46a23 !important}
+html[data-theme="day"] .stat sup{color:#c46a23}
+html[data-theme="day"] .stat span,
+html[data-theme="day"] .stat small{color:rgba(42,20,8,.7) !important}
+html[data-theme="day"] .stat::before{background:radial-gradient(circle at 100% 0,rgba(196,106,35,.18),transparent 60%)}
+html[data-theme="day"] .strip{background:#e8d6a8;color:#2a1408;border-color:rgba(58,30,16,.12)}
+html[data-theme="day"] .hero-eyebrow{color:#f6ecd9;background:rgba(232,167,90,.08);border-color:rgba(232,167,90,.25)}
+html[data-theme="day"] .hero,
+html[data-theme="day"] .hero-title,
+html[data-theme="day"] .hero-sub,
+html[data-theme="day"] .hero-meta b{color:#f6ecd9}
+html[data-theme="day"] .tm-card{background:#fff8e4;border-color:rgba(122,59,26,.22)}
+html[data-theme="day"] .tm-meta b{color:#2a1408}
+html[data-theme="day"] .tm-meta span{color:rgba(58,30,16,.55)}
+html[data-theme="day"] .cert{background:rgba(196,106,35,.06);border-color:rgba(122,59,26,.18)}
+html[data-theme="day"] .cert span{color:rgba(58,30,16,.6)}
+html[data-theme="day"] .spec-strip{background:linear-gradient(135deg,#fff3d8,#f0dca8);border-color:rgba(122,59,26,.22)}
+html[data-theme="day"] .spec-chip b{color:#2a1408}
+html[data-theme="day"] .spec-chip small{color:rgba(58,30,16,.6)}
+html[data-theme="day"] .scrolly-caption{color:#2a1408}
+html[data-theme="day"] .footer{background:#1a0d06}
+
+@media (max-width: 900px){
+  .scrolly{margin-top:40px;padding:20px 16px}
+  .scrolly-stage{grid-template-columns:1fr;gap:20px}
+  .stage-svg{max-height:42vh}
+  .scrolly-sticky{padding:10px 0}
+  .scrolly-caption{max-width:none}
+  .scrolly-caption .sc-num{margin-bottom:10px;font-size:12px}
+  .scrolly-caption .sc-title{margin-bottom:12px}
+  .scrolly-caption .sc-body{font-size:15.5px;min-height:5.5em}
+  .sc-controls{margin-top:22px;gap:10px;justify-content:center}
+  .sc-play{margin-left:0;order:99}
+  .sc-dots{order:0}
+  .sc-btn{width:38px;height:38px}
+}
+@media (max-width: 480px){
+  .scrolly-caption .sc-body{min-height:6.5em}
+  .sc-dot{width:8px;height:8px}
+  .stage-svg{max-height:34vh}
+}
+
 /* ============ REVEAL ============ */
 .reveal{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.5,0,.2,1), transform .9s cubic-bezier(.5,0,.2,1)}
 .reveal.in{opacity:1;transform:translateY(0)}

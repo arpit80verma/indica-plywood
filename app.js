@@ -286,3 +286,129 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 })();
 
 
+/* ============ PROCESS CAROUSEL (autoplay + dots + arrows + swipe + keyboard) ============ */
+(function(){
+  const wrap = document.getElementById('scrolly');
+  if(!wrap) return;
+  const numEl   = wrap.querySelector('.sc-num');
+  const titleEl = wrap.querySelector('.sc-title');
+  const bodyEl  = wrap.querySelector('.sc-body');
+  const progEl  = wrap.querySelector('.sc-prog i');
+  const sgs     = wrap.querySelectorAll('.stage-svg .sg');
+  const dots    = wrap.querySelectorAll('.sc-dot');
+  const prevBtn = wrap.querySelector('.sc-prev');
+  const nextBtn = wrap.querySelector('.sc-next');
+  const playBtn = wrap.querySelector('.sc-play');
+  const tmpl    = document.getElementById('scStepData');
+  const steps   = Array.from(tmpl.content.querySelectorAll('[data-step]'));
+  const total   = steps.length;
+  const INTERVAL = 4800;
+
+  let current = -1;
+  let timer = null;
+  let playing = true;
+  let inView = false;
+  let hovered = false;
+
+  function setStep(n, dir){
+    n = (n + total) % total;
+    if(n === current) return;
+    const forward = (dir !== undefined) ? dir > 0 : (current === -1 || (n > current && !(current === total-1 && n === 0)));
+    current = n;
+    sgs.forEach((g, i) => g.classList.toggle('active', i === n));
+    dots.forEach((d, i) => d.classList.toggle('active', i === n));
+    const sp = steps[n];
+    numEl.textContent = String(n+1).padStart(2,'0') + ' / 07';
+    const slideOut = forward ? 'translateX(-18px)' : 'translateX(18px)';
+    const slideIn  = forward ? 'translateX(18px)'  : 'translateX(-18px)';
+    titleEl.style.opacity = '0';
+    bodyEl.style.opacity = '0';
+    titleEl.style.transform = slideOut;
+    bodyEl.style.transform = slideOut;
+    setTimeout(() => {
+      titleEl.innerHTML = sp.dataset.title;
+      bodyEl.innerHTML  = sp.dataset.body;
+      titleEl.style.transform = slideIn;
+      bodyEl.style.transform  = slideIn;
+      // force reflow then animate in
+      void titleEl.offsetWidth;
+      titleEl.style.opacity = '1';
+      bodyEl.style.opacity = '1';
+      titleEl.style.transform = 'translateX(0)';
+      bodyEl.style.transform  = 'translateX(0)';
+    }, 220);
+    progEl.style.width = (((n+1)/total)*100) + '%';
+  }
+
+  function tick(){ setStep(current + 1, 1); }
+
+  function startTimer(){
+    stopTimer();
+    if(playing && inView && !hovered) timer = setInterval(tick, INTERVAL);
+  }
+  function stopTimer(){ if(timer){ clearInterval(timer); timer = null; } }
+  function resetTimer(){ if(playing && inView && !hovered) startTimer(); }
+
+  // controls
+  prevBtn.addEventListener('click', () => { setStep(current - 1, -1); resetTimer(); });
+  nextBtn.addEventListener('click', () => { setStep(current + 1, 1); resetTimer(); });
+  dots.forEach(d => d.addEventListener('click', () => {
+    const i = parseInt(d.dataset.i,10);
+    setStep(i, i > current ? 1 : -1);
+    resetTimer();
+  }));
+  playBtn.addEventListener('click', () => {
+    playing = !playing;
+    playBtn.setAttribute('data-playing', playing);
+    playBtn.setAttribute('aria-label', playing ? 'Pause autoplay' : 'Play autoplay');
+    if(playing) startTimer(); else stopTimer();
+  });
+
+  // pause on hover (desktop)
+  wrap.addEventListener('mouseenter', () => { hovered = true; stopTimer(); });
+  wrap.addEventListener('mouseleave', () => { hovered = false; resetTimer(); });
+
+  // swipe (touch)
+  let sx = null, sy = null;
+  wrap.addEventListener('touchstart', (e) => {
+    const t = e.touches[0]; sx = t.clientX; sy = t.clientY;
+  }, { passive: true });
+  wrap.addEventListener('touchend', (e) => {
+    if(sx === null) return;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - sx;
+    const dy = t.clientY - sy;
+    if(Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)){
+      if(dx < 0) setStep(current + 1, 1); else setStep(current - 1, -1);
+      resetTimer();
+    }
+    sx = sy = null;
+  }, { passive: true });
+
+  // keyboard
+  wrap.setAttribute('tabindex', '-1');
+  wrap.addEventListener('keydown', (e) => {
+    if(e.key === 'ArrowRight'){ setStep(current+1,1); resetTimer(); }
+    else if(e.key === 'ArrowLeft'){ setStep(current-1,-1); resetTimer(); }
+  });
+
+  // pause when not visible (saves CPU & avoids progress skipping when offscreen)
+  const io2 = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      inView = e.isIntersecting && e.intersectionRatio > 0.25;
+      if(inView) resetTimer(); else stopTimer();
+    });
+  }, { threshold: [0, 0.25, 0.5] });
+  io2.observe(wrap);
+
+  // respect reduced motion: stop autoplay
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    playing = false;
+    playBtn.setAttribute('data-playing','false');
+  }
+
+  // init
+  setStep(0, 1);
+})();
+
+

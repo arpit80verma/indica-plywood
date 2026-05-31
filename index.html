@@ -108,6 +108,231 @@
   </div>
 </section>
 
+<section class="factory" id="factory">
+  <div class="section-head light">
+    <span class="kicker">— Factory &amp; Process</span>
+    <h2 class="section-title">Every sheet passes through <em>seven disciplined stages.</em></h2>
+    <p class="section-lede">From veneer selection and drying to layup, hot pressing, calibration, sanding, and finishing — each stage is monitored under batch-controlled systems for dependable performance.</p>
+  </div>
+
+  <!-- ANIMATED PROCESS CAROUSEL -->
+  <div class="scrolly" id="scrolly">
+    <div class="scrolly-sticky">
+      <div class="scrolly-stage">
+        <svg class="stage-svg" viewBox="0 0 600 360" aria-hidden="true">
+          <defs>
+            <linearGradient id="sgGrain" x1="0" x2="1">
+              <stop offset="0" stop-color="#7a3b1a"/>
+              <stop offset=".5" stop-color="#a8541f"/>
+              <stop offset="1" stop-color="#5a2d15"/>
+            </linearGradient>
+            <linearGradient id="sgAmber" x1="0" x2="1">
+              <stop offset="0" stop-color="#E8A75A"/>
+              <stop offset="1" stop-color="#c46a23"/>
+            </linearGradient>
+            <pattern id="sgLines" width="6" height="6" patternUnits="userSpaceOnUse">
+              <path d="M0 3h6" stroke="rgba(232,167,90,.18)" stroke-width=".6"/>
+            </pattern>
+          </defs>
+
+          <!-- 01 logs -->
+          <g class="sg sg-01">
+            <path d="M80 300h440" stroke="#E8A75A" stroke-width=".6" opacity=".25"/>
+
+            <!-- LOG A (back, larger) -->
+            <g class="log log-a">
+              <ellipse cx="180" cy="260" rx="60" ry="22" fill="#3a1e10" opacity=".55"/>
+              <g class="log-body">
+                <rect x="120" y="160" width="120" height="100" fill="url(#sgGrain)"/>
+                <!-- vertical grain hints on the bark side -->
+                <path d="M134 168v92M152 170v88M170 168v92M188 172v86M206 170v90M224 168v92" stroke="#3a1e10" stroke-width=".7" opacity=".35"/>
+                <ellipse cx="180" cy="160" rx="60" ry="22" fill="#7a3b1a"/>
+                <ellipse cx="180" cy="160" rx="56" ry="20" fill="#8a431d"/>
+                <g class="rings">
+                  <ellipse class="r1" cx="180" cy="160" rx="42" ry="14" fill="none" stroke="#E8A75A" stroke-width="1.2" opacity=".6"/>
+                  <ellipse class="r2" cx="180" cy="160" rx="26" ry="8" fill="none" stroke="#E8A75A" stroke-width=".9" opacity=".5"/>
+                  <ellipse class="r3" cx="180" cy="160" rx="12" ry="4" fill="none" stroke="#E8A75A" stroke-width=".7" opacity=".5"/>
+                  <circle cx="180" cy="160" r="1.6" fill="#E8A75A"/>
+                </g>
+              </g>
+            </g>
+
+            <!-- LOG B (front, peeling) -->
+            <g class="log log-b">
+              <ellipse cx="400" cy="270" rx="60" ry="22" fill="#3a1e10" opacity=".55"/>
+              <g class="log-body">
+                <rect x="340" y="190" width="120" height="80" fill="url(#sgGrain)"/>
+                <path d="M354 198v72M372 200v68M390 198v72M408 200v70M426 198v72M444 200v68" stroke="#3a1e10" stroke-width=".7" opacity=".35"/>
+                <ellipse cx="400" cy="190" rx="60" ry="22" fill="#7a3b1a"/>
+                <ellipse cx="400" cy="190" rx="56" ry="20" fill="#8a431d"/>
+                <g class="rings">
+                  <ellipse class="r1" cx="400" cy="190" rx="42" ry="14" fill="none" stroke="#E8A75A" stroke-width="1.2" opacity=".6"/>
+                  <ellipse class="r2" cx="400" cy="190" rx="24" ry="8" fill="none" stroke="#E8A75A" stroke-width=".8" opacity=".5"/>
+                  <circle cx="400" cy="190" r="1.6" fill="#E8A75A"/>
+                </g>
+              </g>
+            </g>
+
+            <!-- PEELING VENEER RIBBON unspooling from log B -->
+            <g class="peel">
+              <path class="peel-ribbon" d="M460 200 C 500 200, 520 220, 540 210 C 560 200, 555 235, 535 240 C 515 245, 500 232, 482 232 C 472 232, 470 222, 460 218 Z" fill="#a8541f" opacity=".95"/>
+              <path d="M468 210c20 0 38 6 60 8" stroke="#E8A75A" stroke-width=".6" fill="none" opacity=".5"/>
+              <path d="M468 220c22-2 42 4 58 12" stroke="#E8A75A" stroke-width=".5" fill="none" opacity=".4"/>
+            </g>
+
+            <!-- FALLING WOOD CHIPS -->
+            <g class="chips">
+              <rect class="chip c1" x="260" y="120" width="8" height="3" fill="#a8541f" rx="1"/>
+              <rect class="chip c2" x="310" y="100" width="6" height="2.5" fill="#c46a23" rx="1"/>
+              <rect class="chip c3" x="230" y="90"  width="7" height="3" fill="#8a431d" rx="1"/>
+              <rect class="chip c4" x="340" y="140" width="5" height="2" fill="#E8A75A" rx="1" opacity=".8"/>
+              <rect class="chip c5" x="280" y="160" width="6" height="2.5" fill="#a8541f" rx="1"/>
+            </g>
+
+            <!-- AMBIENT DUST SPECKS -->
+            <g class="specks">
+              <circle class="sp" cx="150" cy="100" r="1.2" fill="#E8A75A" opacity=".55"/>
+              <circle class="sp" cx="320" cy="80"  r="1"  fill="#E8A75A" opacity=".5"/>
+              <circle class="sp" cx="450" cy="110" r="1.3" fill="#E8A75A" opacity=".6"/>
+              <circle class="sp" cx="100" cy="180" r="1"  fill="#E8A75A" opacity=".45"/>
+              <circle class="sp" cx="500" cy="170" r="1.1" fill="#E8A75A" opacity=".55"/>
+            </g>
+          </g>
+
+          <!-- 02 veneer sheets fanned -->
+          <g class="sg sg-02">
+            <g transform="translate(300 200) rotate(-12)"><rect x="-160" y="-12" width="320" height="24" fill="url(#sgGrain)" rx="1"/><rect x="-160" y="-12" width="320" height="24" fill="url(#sgLines)"/></g>
+            <g transform="translate(300 200) rotate(-4)"><rect x="-160" y="-12" width="320" height="24" fill="#8a431d"/><rect x="-160" y="-12" width="320" height="24" fill="url(#sgLines)"/></g>
+            <g transform="translate(300 200) rotate(4)"><rect x="-160" y="-12" width="320" height="24" fill="#9a4c20"/><rect x="-160" y="-12" width="320" height="24" fill="url(#sgLines)"/></g>
+            <g transform="translate(300 200) rotate(12)"><rect x="-160" y="-12" width="320" height="24" fill="#7a3b1a"/><rect x="-160" y="-12" width="320" height="24" fill="url(#sgLines)"/></g>
+            <g class="vapor">
+              <circle cx="180" cy="110" r="22" fill="#E8A75A" opacity=".08"/>
+              <circle cx="230" cy="90" r="18" fill="#E8A75A" opacity=".07"/>
+              <circle cx="400" cy="110" r="24" fill="#E8A75A" opacity=".08"/>
+            </g>
+          </g>
+
+          <!-- 03 resin drop -->
+          <g class="sg sg-03">
+            <rect x="120" y="230" width="360" height="22" fill="#5a2d15" rx="1"/>
+            <rect x="120" y="230" width="360" height="22" fill="url(#sgLines)"/>
+            <path class="resin-drop" d="M300 90c10 18 22 38 22 56a22 22 0 1 1-44 0c0-18 12-38 22-56Z" fill="url(#sgAmber)"/>
+            <ellipse cx="300" cy="152" rx="6" ry="2" fill="#fff" opacity=".5"/>
+            <path class="resin-pool" d="M210 230c30-8 60-10 90-10s60 2 90 10" fill="none" stroke="#E8A75A" stroke-width="2" opacity=".55"/>
+          </g>
+
+          <!-- 04 layup stack alternating grain -->
+          <g class="sg sg-04">
+            <g class="layer" transform="translate(0 -20)"><rect x="160" y="190" width="280" height="18" fill="#9a4c20"/><path d="M170 199h260" stroke="#E8A75A" stroke-width=".6" opacity=".3"/></g>
+            <g class="layer"><rect x="160" y="210" width="280" height="18" fill="#7a3b1a"/><path d="M180 213v12M210 213v12M240 213v12M270 213v12M300 213v12M330 213v12M360 213v12M390 213v12M420 213v12" stroke="#E8A75A" stroke-width=".5" opacity=".3"/></g>
+            <g class="layer" transform="translate(0 20)"><rect x="160" y="230" width="280" height="18" fill="#a8541f"/><path d="M170 239h260" stroke="#E8A75A" stroke-width=".6" opacity=".3"/></g>
+            <g class="layer" transform="translate(0 40)"><rect x="160" y="250" width="280" height="18" fill="#7a3b1a"/><path d="M180 253v12M210 253v12M240 253v12M270 253v12M300 253v12M330 253v12M360 253v12M390 253v12M420 253v12" stroke="#E8A75A" stroke-width=".5" opacity=".3"/></g>
+            <g class="layer" transform="translate(0 60)"><rect x="160" y="270" width="280" height="18" fill="#9a4c20"/><path d="M170 279h260" stroke="#E8A75A" stroke-width=".6" opacity=".3"/></g>
+          </g>
+
+          <!-- 05 hot press -->
+          <g class="sg sg-05">
+            <rect class="press-top" x="140" y="110" width="320" height="50" fill="#2a1408" stroke="#E8A75A" stroke-width="1"/>
+            <rect x="170" y="100" width="260" height="10" fill="#1a0d06"/>
+            <g class="press-sheets">
+              <rect x="170" y="195" width="260" height="8" fill="#a8541f"/>
+              <rect x="170" y="205" width="260" height="8" fill="#7a3b1a"/>
+              <rect x="170" y="215" width="260" height="8" fill="#a8541f"/>
+              <rect x="170" y="225" width="260" height="8" fill="#7a3b1a"/>
+              <rect x="170" y="235" width="260" height="8" fill="#a8541f"/>
+            </g>
+            <rect class="press-bot" x="140" y="248" width="320" height="50" fill="#2a1408" stroke="#E8A75A" stroke-width="1"/>
+            <g class="heat">
+              <path d="M180 90c0-12 10-12 10-24M220 90c0-12 10-12 10-24M260 90c0-12 10-12 10-24M300 90c0-12 10-12 10-24M340 90c0-12 10-12 10-24M380 90c0-12 10-12 10-24M420 90c0-12 10-12 10-24" stroke="#E8A75A" stroke-width="1.2" fill="none" opacity=".65"/>
+            </g>
+            <text x="300" y="335" text-anchor="middle" fill="#E8A75A" font-family="Inter" font-size="11" letter-spacing="3">130°C · 14 KG/CM²</text>
+          </g>
+
+          <!-- 06 sanding -->
+          <g class="sg sg-06">
+            <rect x="100" y="220" width="400" height="30" fill="#9a4c20"/>
+            <rect x="100" y="220" width="400" height="30" fill="url(#sgLines)"/>
+            <g class="sander">
+              <rect x="-60" y="170" width="120" height="40" rx="6" fill="#1a0d06" stroke="#E8A75A"/>
+              <circle cx="-30" cy="215" r="8" fill="#E8A75A"/>
+              <circle cx="30" cy="215" r="8" fill="#E8A75A"/>
+              <path d="M-40 165v-25M0 165v-25M40 165v-25" stroke="#E8A75A" stroke-width="1"/>
+            </g>
+            <g class="dust">
+              <circle cx="200" cy="210" r="1.5" fill="#E8A75A" opacity=".7"/>
+              <circle cx="230" cy="205" r="1" fill="#E8A75A" opacity=".5"/>
+              <circle cx="260" cy="212" r="1.2" fill="#E8A75A" opacity=".7"/>
+              <circle cx="290" cy="200" r="1" fill="#E8A75A" opacity=".4"/>
+              <circle cx="320" cy="208" r="1.5" fill="#E8A75A" opacity=".6"/>
+            </g>
+          </g>
+
+          <!-- 07 dispatch truck -->
+          <g class="sg sg-07">
+            <rect x="0" y="290" width="600" height="2" fill="#E8A75A" opacity=".25"/>
+            <g class="truck">
+              <rect x="160" y="180" width="180" height="100" fill="#3a1e10" stroke="#E8A75A"/>
+              <rect x="170" y="190" width="160" height="80" fill="#5a2d15"/>
+              <text x="250" y="236" text-anchor="middle" fill="#E8A75A" font-family="Fraunces" font-size="22" font-style="italic">Indica</text>
+              <text x="250" y="256" text-anchor="middle" fill="#f6ecd9" font-family="Inter" font-size="9" letter-spacing="3">PLYWOOD</text>
+              <path d="M340 200l60 20v60h-60z" fill="#2a1408" stroke="#E8A75A"/>
+              <rect x="350" y="210" width="40" height="24" fill="#1a0d06" stroke="#E8A75A"/>
+              <circle cx="200" cy="290" r="16" fill="#1a0d06" stroke="#E8A75A" stroke-width="2"/>
+              <circle cx="200" cy="290" r="6" fill="#E8A75A"/>
+              <circle cx="300" cy="290" r="16" fill="#1a0d06" stroke="#E8A75A" stroke-width="2"/>
+              <circle cx="300" cy="290" r="6" fill="#E8A75A"/>
+              <circle cx="380" cy="290" r="16" fill="#1a0d06" stroke="#E8A75A" stroke-width="2"/>
+              <circle cx="380" cy="290" r="6" fill="#E8A75A"/>
+            </g>
+            <g class="speed">
+              <path d="M40 240h80M30 260h60M50 280h70" stroke="#E8A75A" stroke-width="1.2" opacity=".55"/>
+            </g>
+          </g>
+        </svg>
+
+        <div class="scrolly-caption">
+          <span class="sc-num">01 / 07</span>
+          <h3 class="sc-title">Veneer Selection</h3>
+          <p class="sc-body">Gurjan, Poplar, Eucalyptus &amp; Semhal logs hand-picked, peeled and graded on the factory floor.</p>
+          <div class="sc-prog"><i style="width:14%"></i></div>
+
+          <div class="sc-controls">
+            <button class="sc-btn sc-prev" aria-label="Previous stage">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 6l-6 6 6 6"/></svg>
+            </button>
+            <div class="sc-dots" role="tablist" aria-label="Process stages">
+              <button class="sc-dot" data-i="0" aria-label="Veneer Selection"></button>
+              <button class="sc-dot" data-i="1" aria-label="Drying & Grading"></button>
+              <button class="sc-dot" data-i="2" aria-label="In-House Resin"></button>
+              <button class="sc-dot" data-i="3" aria-label="Layup & Assembly"></button>
+              <button class="sc-dot" data-i="4" aria-label="Hot Pressing"></button>
+              <button class="sc-dot" data-i="5" aria-label="Calibration & Sanding"></button>
+              <button class="sc-dot" data-i="6" aria-label="QC & Dispatch"></button>
+            </div>
+            <button class="sc-btn sc-next" aria-label="Next stage">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 6l6 6-6 6"/></svg>
+            </button>
+            <button class="sc-btn sc-play" aria-label="Pause autoplay" data-playing="true">
+              <svg class="ic-pause" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+              <svg class="ic-play" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5l12 7-12 7z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- step data (read by JS) -->
+    <template id="scStepData">
+      <div data-step="1" data-title="Veneer Selection" data-body="Gurjan, Poplar, Eucalyptus &amp; Semhal logs hand-picked, peeled and graded on the factory floor."></div>
+      <div data-step="2" data-title="Drying &amp; Grading" data-body="Moisture-stabilised veneers fanned, batch-numbered and graded for engineered layup structures."></div>
+      <div data-step="3" data-title="In-House Resin" data-body="Phenolic &amp; urea bond chemistry made on-site — consistent adhesion across every unit, every batch."></div>
+      <div data-step="4" data-title="Layup &amp; Assembly" data-body="Cross-grain layup alternates direction layer by layer — the structural secret behind dimensional stability."></div>
+      <div data-step="5" data-title="Hot Pressing" data-body="Multi-daylight hot presses cure the panel at 130°C and 14 kg/cm² for an unbreakable bond."></div>
+      <div data-step="6" data-title="Calibration &amp; Sanding" data-body="Calibrated wide-belt sanders deliver uniform thickness and a furniture-ready finish."></div>
+      <div data-step="7" data-title="QC &amp; Dispatch" data-body="Batch-tested, ISI-stamped and rolled out on our 12T / 25T / 30T fleet to dealers pan-India."></div>
+    </template>
+  </div>
+</section>
+
 
 <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
 <script src="app.js"></script>
