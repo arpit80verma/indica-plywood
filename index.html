@@ -559,6 +559,70 @@
   </div>
 </section>
 
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <span class="kicker light">— Get in touch</span>
+      <h2 class="section-title light">Let's build something <em>that lasts.</em></h2>
+      <p>Speak with our sales team for product enquiries, dealership opportunities, or bulk project requirements. We respond within one business day.</p>
+      <ul class="contact-list">
+        <li><b>HQ</b> Tambaur, Sitapur, Uttar Pradesh</li>
+        <li><b>Facilities</b> Indica · Woodmake Industries · Ambika Plywood</li>
+        <li><b>Email</b> sales@indicaplywood.in</li>
+        <li><b>WhatsApp</b> +91 · Available on enquiry</li>
+      </ul>
+      <div class="contact-tags">
+        <span>Enquiry Form</span><span>Become a Dealer</span><span>WhatsApp Contact</span><span>Product Gallery</span>
+      </div>
+    </div>
+    <form class="contact-form" onsubmit="event.preventDefault();this.querySelector('button').textContent='Thank you ✓';">
+      <h3>Request a Quote</h3>
+      <div class="row">
+        <label><span>Full Name</span><input required placeholder="Your name"></label>
+        <label><span>Phone</span><input required placeholder="+91 ..."></label>
+      </div>
+      <label><span>Email</span><input type="email" required placeholder="you@company.com"></label>
+      <label><span>Interest</span>
+        <select>
+          <option>Indica Marina (IS 710)</option>
+          <option>Indica Ironwood</option>
+          <option>Skyride / Galaxy (MR)</option>
+          <option>Indica Flush Door</option>
+          <option>Block Board</option>
+          <option>Flexi Ply</option>
+          <option>Dealership Enquiry</option>
+        </select>
+      </label>
+      <label><span>Message</span><textarea rows="4" placeholder="Tell us about your requirement..."></textarea></label>
+      <button type="submit" class="btn btn-primary full">Send Enquiry <span>→</span></button>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <span class="brand-mark">
+        <svg viewBox="0 0 40 40" width="40" height="40"><polygon points="20,3 35,12 35,28 20,37 5,28 5,12" fill="none" stroke="currentColor" stroke-width="2"/><text x="20" y="26" text-anchor="middle" font-family="Fraunces" font-size="18" fill="currentColor" font-weight="700">I</text></svg>
+      </span>
+      <div>
+        <div class="brand-name big">Indica<em>Plywood</em></div>
+        <p>Engineered for consistency. Built for long-term trust.</p>
+      </div>
+    </div>
+    <div class="footer-cols">
+      <div><h5>Company</h5><a href="#about">About</a><a href="#factory">Factory</a><a href="#presence">Presence</a></div>
+      <div><h5>Products</h5><a href="#products">Marina</a><a href="#products">Ironwood</a><a href="#products">Flush Doors</a><a href="#products">Flexi Ply</a></div>
+      <div><h5>Standards</h5><a href="#">IS 303</a><a href="#">IS 710</a><a href="#">IS 1659</a><a href="#">IS 2202</a></div>
+      <div><h5>Connect</h5><a href="#contact">Enquire</a><a href="#contact">Dealer</a><a href="#contact">WhatsApp</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="yr"></span> Indica Plywood · All rights reserved.</span>
+    <span>Tambaur · Sitapur · India</span>
+  </div>
+</footer>
+
 
 <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
 <script src="app.js"></script>
