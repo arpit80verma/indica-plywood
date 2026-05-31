@@ -243,6 +243,17 @@ section{padding:140px 44px;position:relative}
 .step h4{font-family:'Fraunces',serif;font-size:18px;font-weight:600;margin-bottom:8px;letter-spacing:-.01em}
 .step p{font-size:13px;color:rgba(246,236,217,.6);line-height:1.55}
 
+/* ============ WHY ============ */
+.why{background:var(--section-paper);color:var(--paper-ink)}
+.why-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.feat{padding:42px 36px;background:var(--card-bg);border-radius:var(--rad);border:1px solid var(--card-border);transition:transform .5s, box-shadow .5s, background .5s;position:relative;overflow:hidden}
+.feat::after{content:"";position:absolute;inset:auto -30% -30% auto;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,var(--amber) 0%,transparent 60%);opacity:0;transition:opacity .5s}
+.feat:hover{transform:translateY(-6px);box-shadow:0 30px 60px -20px rgba(60,30,12,.25)}
+.feat:hover::after{opacity:.18}
+.feat-icn{width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:14px;background:linear-gradient(135deg,var(--wood-2),var(--wood-1));color:var(--amber);margin-bottom:24px;position:relative;z-index:1}
+.feat h3{font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--wood-1);margin-bottom:12px;letter-spacing:-.01em;position:relative;z-index:1}
+.feat p{font-size:15px;color:#5a4030;position:relative;z-index:1}
+
 /* ============ PROCESS CAROUSEL ============ */
 .scrolly{position:relative;max-width:1280px;margin:80px auto 0;padding:30px 24px 40px;touch-action:pan-y}
 .scrolly-sticky{position:relative;display:flex;align-items:center;justify-content:center}
