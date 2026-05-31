@@ -447,83 +447,6 @@ html[data-theme="day"] .section-title{color:#2a1408}
 html[data-theme="day"] .scrolly-caption .sc-body{color:rgba(42,20,8,.7)}
 html[data-theme="day"] .scrolly-caption .sc-title{color:#2a1408}
 
-/* ============ ANIMATED PRODUCT POSTERS ============ */
-.product-img{display:block}
-.product-img .poster{position:absolute;inset:0;width:100%;height:100%;z-index:0}
-.product-img::before,.product-img::after{z-index:1}
-
-/* Marina — waves + sun shimmer + rain drops */
-.poster .waves path{stroke-dasharray:8 6}
-.product[data-poster="marina"]:hover .poster .w1,.poster .w1{animation:waveShift 7s linear infinite}
-.poster .w2{animation:waveShift 9s linear infinite reverse}
-.poster .w3{animation:waveShift 11s linear infinite}
-.poster .sun{transform-origin:450px 120px;animation:sunPulse 4s ease-in-out infinite}
-.poster .drops .d{opacity:0;animation:dropFall 4s ease-in infinite}
-.poster .drops .d2{animation-delay:.8s}
-.poster .drops .d3{animation-delay:1.6s}
-.poster .drops .d4{animation-delay:2.2s}
-.poster .drops .d5{animation-delay:3.0s}
-@keyframes waveShift{to{stroke-dashoffset:-200}}
-@keyframes sunPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.08);opacity:.9}}
-@keyframes dropFall{0%{transform:translateY(0);opacity:0}10%{opacity:1}90%{opacity:.6}100%{transform:translateY(140px);opacity:0}}
-
-/* Ironwood — concentric annual rings pulsing */
-.poster .rg{transform-box:fill-box;transform-origin:center;animation:ringRipple 5s ease-out infinite}
-.poster .r2{animation-delay:.4s}
-.poster .r3{animation-delay:.8s}
-.poster .r4{animation-delay:1.2s}
-.poster .r5{animation-delay:1.6s}
-@keyframes ringRipple{0%{transform:scale(.7);opacity:.05}40%{opacity:.9}100%{transform:scale(1.25);opacity:0}}
-
-/* Skyride — twinkling stars + shooting comets */
-.poster .st{animation:twinkle 3s ease-in-out infinite}
-.poster .sh{stroke-linecap:round;opacity:0;filter:drop-shadow(0 0 4px #E8A75A);animation:shoot 5s ease-out infinite}
-.poster .sh2{animation-delay:2.4s;animation-duration:6s}
-@keyframes twinkle{0%,100%{opacity:.25;transform:scale(1)}50%{opacity:1;transform:scale(1.4)}}
-@keyframes shoot{0%{opacity:0;transform:translate(-50px,0)}10%{opacity:1}60%{transform:translate(520px,140px);opacity:.6}100%{transform:translate(640px,180px);opacity:0}}
-
-/* Flush door — grain shimmer + light sweep + knob glow */
-.poster .door{filter:drop-shadow(0 10px 24px rgba(0,0,0,.35))}
-.poster .knob{animation:knobGlow 2.4s ease-in-out infinite}
-.poster .sweep{animation:doorSweep 6s linear infinite}
-@keyframes knobGlow{0%,100%{filter:drop-shadow(0 0 0 #E8A75A)}50%{filter:drop-shadow(0 0 8px #E8A75A)}}
-@keyframes doorSweep{0%{transform:translateX(0) skewX(-20deg)}100%{transform:translateX(820px) skewX(-20deg)}}
-
-/* Ironwood door — cross-grain layers slide in alternation */
-.poster .ly{transform-box:fill-box;transform-origin:left center;animation:layerSweep 5s ease-in-out infinite}
-.poster .ly:nth-child(2){animation-delay:.2s;transform-origin:right center}
-.poster .ly:nth-child(3){animation-delay:.4s}
-.poster .ly:nth-child(4){animation-delay:.6s;transform-origin:right center}
-.poster .ly:nth-child(5){animation-delay:.8s}
-@keyframes layerSweep{0%,100%{transform:scaleX(1)}50%{transform:scaleX(.92)}}
-
-/* PF door — ripples expanding from droplet impacts */
-.poster .rp,.poster .rp2{transform-box:fill-box;transform-origin:center;animation:ripple 3s ease-out infinite}
-.poster .ripples circle:nth-child(2){animation-delay:.4s}
-.poster .ripples circle:nth-child(3){animation-delay:.8s}
-.poster .ripples circle:nth-child(4){animation-delay:1.4s}
-.poster .ripples circle:nth-child(5){animation-delay:1.8s}
-.poster .ripples circle:nth-child(6){animation-delay:2.2s}
-.poster .dp{animation:dropletDrop 3s ease-in infinite}
-.poster .dp2{animation-delay:1.4s}
-@keyframes ripple{0%{transform:scale(.3);opacity:.9}100%{transform:scale(1.6);opacity:0}}
-@keyframes dropletDrop{0%{transform:translateY(-90px);opacity:0}10%{opacity:1}80%{transform:translateY(70px);opacity:.6}100%{transform:translateY(80px);opacity:0}}
-
-/* Block board — battens fan in sequence */
-.poster .bt{transform-box:fill-box;transform-origin:center bottom;animation:battenWave 4s ease-in-out infinite}
-@keyframes battenWave{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.92)}}
-
-/* Flexi ply — sine-wave curves morph */
-.poster .fx{stroke-dasharray:6 6}
-.poster .fx1{animation:flexFlow 6s linear infinite}
-.poster .fx2{animation:flexFlow 7s linear infinite reverse}
-.poster .fx3{animation:flexFlow 8s linear infinite}
-.poster .fx4{animation:flexFlow 5.5s linear infinite reverse}
-@keyframes flexFlow{to{stroke-dashoffset:-240}}
-
-@media (prefers-reduced-motion: reduce){
-  .poster *{animation:none !important}
-}
 /* ============ PROCESS CAROUSEL ============ */
 .scrolly{position:relative;max-width:1280px;margin:80px auto 0;padding:30px 24px 40px;touch-action:pan-y}
 .scrolly-sticky{position:relative;display:flex;align-items:center;justify-content:center}
@@ -661,3 +584,80 @@ html[data-theme="day"] .footer{background:#1a0d06}
   .stage-svg{max-height:34vh}
 }
 
+/* ============ ANIMATED PRODUCT POSTERS ============ */
+.product-img{display:block}
+.product-img .poster{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.product-img::before,.product-img::after{z-index:1}
+
+/* Marina — waves + sun shimmer + rain drops */
+.poster .waves path{stroke-dasharray:8 6}
+.product[data-poster="marina"]:hover .poster .w1,.poster .w1{animation:waveShift 7s linear infinite}
+.poster .w2{animation:waveShift 9s linear infinite reverse}
+.poster .w3{animation:waveShift 11s linear infinite}
+.poster .sun{transform-origin:450px 120px;animation:sunPulse 4s ease-in-out infinite}
+.poster .drops .d{opacity:0;animation:dropFall 4s ease-in infinite}
+.poster .drops .d2{animation-delay:.8s}
+.poster .drops .d3{animation-delay:1.6s}
+.poster .drops .d4{animation-delay:2.2s}
+.poster .drops .d5{animation-delay:3.0s}
+@keyframes waveShift{to{stroke-dashoffset:-200}}
+@keyframes sunPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.08);opacity:.9}}
+@keyframes dropFall{0%{transform:translateY(0);opacity:0}10%{opacity:1}90%{opacity:.6}100%{transform:translateY(140px);opacity:0}}
+
+/* Ironwood — concentric annual rings pulsing */
+.poster .rg{transform-box:fill-box;transform-origin:center;animation:ringRipple 5s ease-out infinite}
+.poster .r2{animation-delay:.4s}
+.poster .r3{animation-delay:.8s}
+.poster .r4{animation-delay:1.2s}
+.poster .r5{animation-delay:1.6s}
+@keyframes ringRipple{0%{transform:scale(.7);opacity:.05}40%{opacity:.9}100%{transform:scale(1.25);opacity:0}}
+
+/* Skyride — twinkling stars + shooting comets */
+.poster .st{animation:twinkle 3s ease-in-out infinite}
+.poster .sh{stroke-linecap:round;opacity:0;filter:drop-shadow(0 0 4px #E8A75A);animation:shoot 5s ease-out infinite}
+.poster .sh2{animation-delay:2.4s;animation-duration:6s}
+@keyframes twinkle{0%,100%{opacity:.25;transform:scale(1)}50%{opacity:1;transform:scale(1.4)}}
+@keyframes shoot{0%{opacity:0;transform:translate(-50px,0)}10%{opacity:1}60%{transform:translate(520px,140px);opacity:.6}100%{transform:translate(640px,180px);opacity:0}}
+
+/* Flush door — grain shimmer + light sweep + knob glow */
+.poster .door{filter:drop-shadow(0 10px 24px rgba(0,0,0,.35))}
+.poster .knob{animation:knobGlow 2.4s ease-in-out infinite}
+.poster .sweep{animation:doorSweep 6s linear infinite}
+@keyframes knobGlow{0%,100%{filter:drop-shadow(0 0 0 #E8A75A)}50%{filter:drop-shadow(0 0 8px #E8A75A)}}
+@keyframes doorSweep{0%{transform:translateX(0) skewX(-20deg)}100%{transform:translateX(820px) skewX(-20deg)}}
+
+/* Ironwood door — cross-grain layers slide in alternation */
+.poster .ly{transform-box:fill-box;transform-origin:left center;animation:layerSweep 5s ease-in-out infinite}
+.poster .ly:nth-child(2){animation-delay:.2s;transform-origin:right center}
+.poster .ly:nth-child(3){animation-delay:.4s}
+.poster .ly:nth-child(4){animation-delay:.6s;transform-origin:right center}
+.poster .ly:nth-child(5){animation-delay:.8s}
+@keyframes layerSweep{0%,100%{transform:scaleX(1)}50%{transform:scaleX(.92)}}
+
+/* PF door — ripples expanding from droplet impacts */
+.poster .rp,.poster .rp2{transform-box:fill-box;transform-origin:center;animation:ripple 3s ease-out infinite}
+.poster .ripples circle:nth-child(2){animation-delay:.4s}
+.poster .ripples circle:nth-child(3){animation-delay:.8s}
+.poster .ripples circle:nth-child(4){animation-delay:1.4s}
+.poster .ripples circle:nth-child(5){animation-delay:1.8s}
+.poster .ripples circle:nth-child(6){animation-delay:2.2s}
+.poster .dp{animation:dropletDrop 3s ease-in infinite}
+.poster .dp2{animation-delay:1.4s}
+@keyframes ripple{0%{transform:scale(.3);opacity:.9}100%{transform:scale(1.6);opacity:0}}
+@keyframes dropletDrop{0%{transform:translateY(-90px);opacity:0}10%{opacity:1}80%{transform:translateY(70px);opacity:.6}100%{transform:translateY(80px);opacity:0}}
+
+/* Block board — battens fan in sequence */
+.poster .bt{transform-box:fill-box;transform-origin:center bottom;animation:battenWave 4s ease-in-out infinite}
+@keyframes battenWave{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.92)}}
+
+/* Flexi ply — sine-wave curves morph */
+.poster .fx{stroke-dasharray:6 6}
+.poster .fx1{animation:flexFlow 6s linear infinite}
+.poster .fx2{animation:flexFlow 7s linear infinite reverse}
+.poster .fx3{animation:flexFlow 8s linear infinite}
+.poster .fx4{animation:flexFlow 5.5s linear infinite reverse}
+@keyframes flexFlow{to{stroke-dashoffset:-240}}
+
+@media (prefers-reduced-motion: reduce){
+  .poster *{animation:none !important}
+}

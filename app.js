@@ -286,6 +286,20 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 })();
 
 
+/* ============ THEME TOGGLE (day/night) ============ */
+(function(){
+  const root = document.documentElement;
+  const btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  const saved = localStorage.getItem('indica-theme');
+  if(saved) root.setAttribute('data-theme', saved);
+  btn.addEventListener('click', () => {
+    const cur = root.getAttribute('data-theme') === 'day' ? '' : 'day';
+    if(cur) root.setAttribute('data-theme', cur); else root.removeAttribute('data-theme');
+    localStorage.setItem('indica-theme', cur);
+  });
+})();
+
 /* ============ PRODUCT CARD CURSOR SHIMMER ============ */
 (function(){
   const cards = document.querySelectorAll('.product');
