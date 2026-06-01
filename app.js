@@ -605,3 +605,58 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     img.insertAdjacentHTML('afterbegin', svg);
   });
 })();
+
+
+/* ============ ENQUIRE NOW MODAL ============ */
+(function(){
+  const modal = document.getElementById('enquireModal');
+  if(!modal) return;
+  const form = document.getElementById('enquireForm');
+  let opened = false;
+
+  function open(){
+    if(opened) return;
+    opened = true;
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.classList.add('modal-open');
+    setTimeout(()=>{ const f = modal.querySelector('input'); if(f) f.focus(); }, 350);
+  }
+  function close(){
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+    document.body.classList.remove('modal-open');
+    try{ sessionStorage.setItem('indica-enquire-shown','1'); }catch(e){}
+  }
+
+  modal.addEventListener('click', e=>{ if(e.target.matches('[data-close]')) close(); });
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape' && modal.classList.contains('open')) close(); });
+
+  if(form){
+    form.addEventListener('submit', e=>{
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      if(btn){ btn.innerHTML = 'Thank you ✓'; btn.disabled = true; }
+      setTimeout(close, 1400);
+    });
+  }
+
+  // Auto-open after short delay (once per session)
+  let shown = false;
+  try{ shown = sessionStorage.getItem('indica-enquire-shown')==='1'; }catch(e){}
+  if(!shown){
+    setTimeout(open, 1800);
+  }
+
+  // Expose for nav links
+  window.openEnquireModal = open;
+  // Wire "Enquire" anchors to open modal too (still keep #contact fallback)
+  document.querySelectorAll('a[href="#contact"]').forEach(a=>{
+    a.addEventListener('click', e=>{
+      // If pop hasn't shown yet this session, intercept; otherwise let it scroll
+      if(!sessionStorage.getItem('indica-enquire-shown')){
+        e.preventDefault(); open();
+      }
+    });
+  });
+})();

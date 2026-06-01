@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=palette">
+<link rel="stylesheet" href="styles.css?v=enquire">
 </head>
 <body>
 
@@ -659,7 +659,49 @@
   </div>
 </footer>
 
+<!-- ENQUIRE NOW MODAL -->
+<div class="enquire-modal" id="enquireModal" aria-hidden="true" role="dialog" aria-labelledby="enquireTitle" aria-modal="true">
+  <div class="enquire-backdrop" data-close></div>
+  <div class="enquire-card" role="document">
+    <button class="enquire-close" data-close aria-label="Close enquiry form">×</button>
+    <div class="enquire-grid">
+      <aside class="enquire-side">
+        <span class="kicker">— Enquire Now</span>
+        <h3>Engineered plywood, <em>tailored to your project.</em></h3>
+        <p>Share a few details and our sales team will respond within one business day with pricing, samples, and dealer options.</p>
+        <ul class="enquire-bullets">
+          <li>✓ IS 710 / IS 303 certified ranges</li>
+          <li>✓ Pan-India dispatch &amp; dealer support</li>
+          <li>✓ Bulk &amp; project enquiries welcome</li>
+        </ul>
+      </aside>
+      <form class="enquire-form" id="enquireForm">
+        <h4>Request a Quote</h4>
+        <div class="row">
+          <label><span>Full Name</span><input name="name" required placeholder="Your name"></label>
+          <label><span>Phone</span><input name="phone" required placeholder="+91 ..."></label>
+        </div>
+        <label><span>Email</span><input name="email" type="email" required placeholder="you@company.com"></label>
+        <label><span>Interest</span>
+          <select name="interest">
+            <option>Indica Marina (IS 710)</option>
+            <option>Indica Ironwood</option>
+            <option>Skyride / Galaxy (MR)</option>
+            <option>Indica Flush Door</option>
+            <option>Block Board</option>
+            <option>Flexi Ply</option>
+            <option>Dealership Enquiry</option>
+          </select>
+        </label>
+        <label><span>Message</span><textarea name="message" rows="3" placeholder="Tell us about your requirement..."></textarea></label>
+        <button type="submit" class="btn btn-primary full">Send Enquiry <span>→</span></button>
+        <p class="enquire-foot">Prefer email? <a href="mailto:sales@indicaplywood.in">sales@indicaplywood.in</a></p>
+      </form>
+    </div>
+  </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
-<script src="app.js?v=palette"></script>
+<script src="app.js?v=enquire"></script>
 </body>
 </html>
