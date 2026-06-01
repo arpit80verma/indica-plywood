@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=indiamap">
+<link rel="stylesheet" href="styles.css?v=indiamap5">
 </head>
 <body>
 
@@ -563,24 +563,21 @@
     <h2 class="section-title">Strong networks. <em>Dependable supply.</em></h2>
   </div>
   <div class="presence-grid">
-    <div class="map reveal">
-      <svg viewBox="0 0 400 440" class="india-map" aria-label="India presence map">
+    <div class="map reveal india-map-wrap">
+      <img class="india-bg" src="assets/india.svg" alt="Map of India" loading="lazy"/>
+      <svg viewBox="0 0 2500 2843" class="india-map india-pins" aria-label="India presence pins" preserveAspectRatio="xMidYMid meet">
         <defs>
           <radialGradient id="pulse" r="50%"><stop offset="0%" stop-color="#E8A75A" stop-opacity=".9"/><stop offset="100%" stop-color="#E8A75A" stop-opacity="0"/></radialGradient>
         </defs>
-        <!-- Stylized India outline (Kashmir top-left to NE tip, down to Kanyakumari, back up via west coast) -->
-        <path class="india-outline" d="M110 40 C120 30 140 28 160 36 C180 44 198 52 210 62 C220 70 232 70 246 64 C262 56 276 60 286 72 C298 84 300 100 292 116 C282 132 286 146 300 156 C320 170 340 180 352 192 C362 204 358 218 344 224 C328 230 312 226 296 222 L296 222 C290 240 296 256 310 268 C320 276 312 290 296 288 C284 286 274 280 264 274 C254 290 258 308 248 322 C236 340 220 356 206 374 C196 388 188 404 178 418 C170 430 156 432 150 420 C144 408 148 394 152 380 C156 366 152 352 142 342 C128 328 112 318 96 308 C82 298 72 282 76 266 C80 250 92 240 100 226 C108 212 102 196 92 184 C78 168 66 150 70 130 C74 112 88 96 96 80 C100 70 102 56 110 40 Z" fill="#2a1a10" stroke="#E8A75A" stroke-width="1.4" opacity=".9"/>
-        <g class="pins">
-          <g><circle cx="170" cy="150" r="22" fill="url(#pulse)"/><circle cx="170" cy="150" r="4" fill="#E8A75A"/><text x="178" y="148" fill="#f6e4cb" font-size="10" font-family="Inter">Uttar Pradesh</text></g>
-          <g><circle cx="112" cy="160" r="18" fill="url(#pulse)"/><circle cx="112" cy="160" r="4" fill="#E8A75A"/><text x="52" y="152" fill="#f6e4cb" font-size="10" font-family="Inter">Rajasthan</text></g>
-          <g><circle cx="150" cy="210" r="18" fill="url(#pulse)"/><circle cx="150" cy="210" r="4" fill="#E8A75A"/><text x="158" y="208" fill="#f6e4cb" font-size="10" font-family="Inter">M.P.</text></g>
-          <g><circle cx="90" cy="220" r="18" fill="url(#pulse)"/><circle cx="90" cy="220" r="4" fill="#E8A75A"/><text x="30" y="218" fill="#f6e4cb" font-size="10" font-family="Inter">Gujarat</text></g>
-          <g><circle cx="118" cy="272" r="18" fill="url(#pulse)"/><circle cx="118" cy="272" r="4" fill="#E8A75A"/><text x="40" y="270" fill="#f6e4cb" font-size="10" font-family="Inter">Maharashtra</text></g>
-          <g><circle cx="168" cy="302" r="18" fill="url(#pulse)"/><circle cx="168" cy="302" r="4" fill="#E8A75A"/><text x="176" y="300" fill="#f6e4cb" font-size="10" font-family="Inter">Telangana</text></g>
-          <g><circle cx="232" cy="176" r="18" fill="url(#pulse)"/><circle cx="232" cy="176" r="4" fill="#E8A75A"/><text x="240" y="174" fill="#f6e4cb" font-size="10" font-family="Inter">Bihar</text></g>
-          <g><circle cx="272" cy="212" r="18" fill="url(#pulse)"/><circle cx="272" cy="212" r="4" fill="#E8A75A"/><text x="280" y="210" fill="#f6e4cb" font-size="10" font-family="Inter">W. Bengal</text></g>
-          <!-- Sri Lanka teardrop, ornamental -->
-          <path d="M190 410 q10 4 10 18 q-2 12 -12 14 q-10 -2 -12 -14 q0 -14 14 -18 z" fill="none" stroke="#E8A75A" stroke-width="1" opacity=".55"/>
+        <g class="pins" font-family="Inter, sans-serif" font-size="60" font-weight="600">
+          <g><circle cx="1124" cy="931" r="130" fill="url(#pulse)"/><circle cx="1124" cy="931" r="26" fill="#E8A75A"/><text x="1180" y="920" fill="#f6e4cb">Uttar Pradesh</text></g>
+          <g><circle cx="524" cy="963" r="120" fill="url(#pulse)"/><circle cx="524" cy="963" r="26" fill="#E8A75A"/><text x="180" y="950" fill="#f6e4cb">Rajasthan</text></g>
+          <g><circle cx="887" cy="1238" r="120" fill="url(#pulse)"/><circle cx="887" cy="1238" r="26" fill="#E8A75A"/><text x="940" y="1228" fill="#f6e4cb">M.P.</text></g>
+          <g><circle cx="363" cy="1330" r="120" fill="url(#pulse)"/><circle cx="363" cy="1330" r="26" fill="#E8A75A"/><text x="40" y="1418" fill="#f6e4cb">Gujarat</text></g>
+          <g><circle cx="725" cy="1605" r="120" fill="url(#pulse)"/><circle cx="725" cy="1605" r="26" fill="#E8A75A"/><text x="220" y="1700" fill="#f6e4cb">Maharashtra</text></g>
+          <g><circle cx="967" cy="1742" r="120" fill="url(#pulse)"/><circle cx="967" cy="1742" r="26" fill="#E8A75A"/><text x="1025" y="1758" fill="#f6e4cb">Telangana</text></g>
+          <g><circle cx="1491" cy="1054" r="120" fill="url(#pulse)"/><circle cx="1491" cy="1054" r="26" fill="#E8A75A"/><text x="1548" y="1042" fill="#f6e4cb">Bihar</text></g>
+          <g><circle cx="1652" cy="1284" r="120" fill="url(#pulse)"/><circle cx="1652" cy="1284" r="26" fill="#E8A75A"/><text x="1710" y="1272" fill="#f6e4cb">W. Bengal</text></g>
         </g>
       </svg>
     </div>
@@ -711,6 +708,6 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
-<script src="app.js?v=indiamap"></script>
+<script src="app.js?v=indiamap5"></script>
 </body>
 </html>

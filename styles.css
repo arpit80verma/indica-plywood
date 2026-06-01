@@ -897,3 +897,31 @@ body.modal-open{overflow:hidden}
   .enquire-tab svg{transform:none;margin:0}
   .enquire-tab:hover{transform:translateY(-2px)}
 }
+
+
+/* ============ INDIA MAP (real outline) ============ */
+.india-map-wrap{position:relative;display:flex;align-items:center;justify-content:center;width:100%;aspect-ratio:400/440;max-width:520px;margin:0 auto}
+.india-map-wrap .india-bg{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:contain;
+  /* recolor the black silhouette to amber-brown tinted */
+  filter:
+    brightness(0) saturate(100%)
+    invert(38%) sepia(58%) saturate(820%) hue-rotate(2deg) brightness(92%) contrast(95%)
+    drop-shadow(0 6px 22px rgba(0,0,0,.45));
+  opacity:.92;
+  pointer-events:none;
+}
+html[data-theme="day"] .india-map-wrap .india-bg{
+  filter:
+    brightness(0) saturate(100%)
+    invert(28%) sepia(72%) saturate(900%) hue-rotate(2deg) brightness(86%) contrast(98%)
+    drop-shadow(0 4px 14px rgba(140,80,30,.25));
+  opacity:.85;
+}
+.india-map-wrap .india-pins{
+  position:relative;width:100%;height:100%;
+  z-index:2;
+}
+.india-map-wrap .india-pins text{paint-order:stroke;stroke:rgba(20,12,6,.7);stroke-width:.6px}
+html[data-theme="day"] .india-map-wrap .india-pins text{fill:#3a1e0c;stroke:rgba(255,248,236,.85);stroke-width:.8px}
