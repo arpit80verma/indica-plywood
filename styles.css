@@ -862,3 +862,38 @@ html:not([data-theme="day"]) .enquire-close{background:rgba(40,28,18,.85);color:
   .enquire-form .row{grid-template-columns:1fr}
 }
 body.modal-open{overflow:hidden}
+
+
+/* ============ ENQUIRE SIDE TAB ============ */
+.enquire-tab{
+  position:fixed;right:0;top:50%;
+  transform:translateY(-50%);
+  z-index:998;
+  writing-mode:vertical-rl;
+  display:inline-flex;align-items:center;gap:10px;
+  padding:18px 11px;
+  border:0;cursor:pointer;
+  background:linear-gradient(180deg,var(--brand,#8a431d),#b96425);
+  color:#fff8ec;
+  font:600 .82rem/1 "Inter",sans-serif;
+  letter-spacing:.18em;text-transform:uppercase;
+  border-radius:10px 0 0 10px;
+  box-shadow:-6px 0 22px rgba(0,0,0,.35),0 0 0 1px rgba(255,255,255,.08) inset;
+  transition:transform .25s cubic-bezier(.2,.9,.3,1.2),box-shadow .25s,background .25s;
+  animation:enqTabPulse 2.6s ease-in-out infinite;
+}
+.enquire-tab svg{transform:rotate(180deg);margin-bottom:2px}
+.enquire-tab:hover{
+  transform:translate(-3px,-50%);
+  box-shadow:-10px 0 30px rgba(140,80,30,.55),0 0 0 1px rgba(255,255,255,.12) inset;
+  background:linear-gradient(180deg,#9a4c20,#d57228);
+}
+@keyframes enqTabPulse{
+  0%,100%{box-shadow:-6px 0 22px rgba(0,0,0,.35),0 0 0 1px rgba(255,255,255,.08) inset,0 0 0 0 rgba(232,167,90,.45)}
+  50%{box-shadow:-6px 0 22px rgba(0,0,0,.35),0 0 0 1px rgba(255,255,255,.08) inset,-1px 0 0 10px rgba(232,167,90,0)}
+}
+@media(max-width:780px){
+  .enquire-tab{top:auto;bottom:18px;right:18px;transform:none;writing-mode:horizontal-tb;border-radius:999px;padding:12px 18px;animation:none}
+  .enquire-tab svg{transform:none;margin:0}
+  .enquire-tab:hover{transform:translateY(-2px)}
+}

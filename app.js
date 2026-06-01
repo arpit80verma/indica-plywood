@@ -626,7 +626,7 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     modal.classList.remove('open');
     modal.setAttribute('aria-hidden','true');
     document.body.classList.remove('modal-open');
-    try{ sessionStorage.setItem('indica-enquire-shown','1'); }catch(e){}
+    opened = false;
   }
 
   modal.addEventListener('click', e=>{ if(e.target.matches('[data-close]')) close(); });
@@ -641,22 +641,10 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     });
   }
 
-  // Auto-open after short delay (once per session)
-  let shown = false;
-  try{ shown = sessionStorage.getItem('indica-enquire-shown')==='1'; }catch(e){}
-  if(!shown){
-    setTimeout(open, 1800);
-  }
+  // Side tab opens the modal
+  const tab = document.getElementById('enquireTab');
+  if(tab) tab.addEventListener('click', open);
 
   // Expose for nav links
   window.openEnquireModal = open;
-  // Wire "Enquire" anchors to open modal too (still keep #contact fallback)
-  document.querySelectorAll('a[href="#contact"]').forEach(a=>{
-    a.addEventListener('click', e=>{
-      // If pop hasn't shown yet this session, intercept; otherwise let it scroll
-      if(!sessionStorage.getItem('indica-enquire-shown')){
-        e.preventDefault(); open();
-      }
-    });
-  });
 })();
