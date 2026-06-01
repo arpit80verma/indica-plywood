@@ -643,8 +643,38 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
   // Side tab opens the modal
   const tab = document.getElementById('enquireTab');
-  if(tab) tab.addEventListener('click', open);
+  if(tab) tab.addEventListener('click', ()=>open());
 
   // Expose for nav links
   window.openEnquireModal = open;
+
+  function openWithInterest(value){
+    const sel = modal.querySelector('select[name="interest"]');
+    if(sel && value){
+      const opt = [...sel.options].find(o=>o.value===value || o.textContent===value);
+      if(opt) sel.value = opt.value;
+    }
+    open();
+  }
+
+  // Contact-tag buttons
+  const ctEnq = document.getElementById('ctEnquire');
+  const ctDeal = document.getElementById('ctDealer');
+  if(ctEnq) ctEnq.addEventListener('click', e=>{ e.preventDefault(); openWithInterest(); });
+  if(ctDeal) ctDeal.addEventListener('click', e=>{ e.preventDefault(); openWithInterest('Dealership Enquiry'); });
+
+  // 'Become a Dealer' primary buttons
+  document.querySelectorAll('a.btn').forEach(a=>{
+    if(a.textContent.trim().toLowerCase().startsWith('become a dealer')){
+      a.addEventListener('click', e=>{ e.preventDefault(); openWithInterest('Dealership Enquiry'); });
+    }
+  });
+  // 'Request Quote' nav CTA -> open modal directly
+  document.querySelectorAll('a.btn-cta').forEach(a=>{
+    a.addEventListener('click', e=>{ e.preventDefault(); open(); });
+  });
+  // All '.link-arrow' Enquire links on product cards
+  document.querySelectorAll('a.link-arrow[href="#contact"]').forEach(a=>{
+    a.addEventListener('click', e=>{ e.preventDefault(); open(); });
+  });
 })();

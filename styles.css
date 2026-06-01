@@ -341,7 +341,8 @@ section{padding:140px 44px;position:relative}
 .contact-list li{display:flex;gap:18px;font-size:15px;color:rgba(246,236,217,.85)}
 .contact-list b{min-width:96px;color:var(--amber);font-weight:500;font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding-top:4px}
 .contact-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
-.contact-tags span{padding:8px 14px;font-size:12px;border:1px solid var(--line);border-radius:999px;color:rgba(246,236,217,.7)}
+.contact-tags a,.contact-tags span{padding:8px 14px;font-size:12px;border:1px solid var(--line);border-radius:999px;color:rgba(246,236,217,.78);text-decoration:none;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.contact-tags a:hover{background:var(--amber);color:#1d140a;border-color:var(--amber)}
 
 .contact-form{background:rgba(255,235,205,.04);border:1px solid var(--line);border-radius:24px;padding:40px;backdrop-filter:blur(10px)}
 .contact-form h3{font-family:'Fraunces',serif;font-size:30px;margin-bottom:28px;letter-spacing:-.01em}
