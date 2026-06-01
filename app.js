@@ -487,14 +487,14 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
           <linearGradient id="pmSky" x1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a1d10"/><stop offset="1" stop-color="#7a3b1a"/></linearGradient>
         </defs>
         <rect width="600" height="360" fill="url(#pmSky)"/>
-        <g class="sun"><circle cx="450" cy="120" r="40" fill="#E8A75A" opacity=".55"/><circle cx="450" cy="120" r="22" fill="#f3b56b"/></g>
+        <g class="sun"><circle cx="450" cy="120" r="40" fill="#3fb44a" opacity=".55"/><circle cx="450" cy="120" r="22" fill="#f3b56b"/></g>
         <rect y="200" width="600" height="160" fill="url(#pmW)" opacity=".88"/>
-        <g class="waves" stroke="#E8A75A" fill="none" stroke-width="1.6" opacity=".7">
+        <g class="waves" stroke="#3fb44a" fill="none" stroke-width="1.6" opacity=".7">
           <path class="w1" d="M-100 230 q 50 -14 100 0 t 100 0 t 100 0 t 100 0 t 100 0 t 100 0"/>
           <path class="w2" d="M-100 258 q 50 -16 100 0 t 100 0 t 100 0 t 100 0 t 100 0 t 100 0" opacity=".6"/>
           <path class="w3" d="M-100 290 q 50 -18 100 0 t 100 0 t 100 0 t 100 0 t 100 0 t 100 0" opacity=".4"/>
         </g>
-        <g class="drops" fill="#E8A75A">
+        <g class="drops" fill="#3fb44a">
           <circle class="d d1" cx="120" cy="60" r="2"/>
           <circle class="d d2" cx="220" cy="40" r="1.6"/>
           <circle class="d d3" cx="320" cy="80" r="2.2"/>
@@ -506,24 +506,24 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
       <svg class="poster" viewBox="0 0 600 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
         <defs><linearGradient id="piG" x1="0" x2="1"><stop offset="0" stop-color="#2e1a0c"/><stop offset="1" stop-color="#a1561e"/></linearGradient></defs>
         <rect width="600" height="360" fill="url(#piG)"/>
-        <g class="rings" fill="none" stroke="#E8A75A" stroke-width="1.2">
+        <g class="rings" fill="none" stroke="#3fb44a" stroke-width="1.2">
           <ellipse class="rg r1" cx="300" cy="180" rx="60" ry="40" opacity=".7"/>
           <ellipse class="rg r2" cx="300" cy="180" rx="110" ry="72" opacity=".55"/>
           <ellipse class="rg r3" cx="300" cy="180" rx="170" ry="110" opacity=".4"/>
           <ellipse class="rg r4" cx="300" cy="180" rx="240" ry="160" opacity=".28"/>
           <ellipse class="rg r5" cx="300" cy="180" rx="320" ry="210" opacity=".18"/>
         </g>
-        <circle cx="300" cy="180" r="4" fill="#E8A75A"/>
+        <circle cx="300" cy="180" r="4" fill="#3fb44a"/>
       </svg>`,
     skyride: `
       <svg class="poster" viewBox="0 0 600 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
         <defs><linearGradient id="psG" x1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a0d22"/><stop offset="1" stop-color="#3b2412"/></linearGradient></defs>
         <rect width="600" height="360" fill="url(#psG)"/>
         <g class="stars">
-          ${Array.from({length:60},(_,i)=>{const x=Math.random()*600,y=Math.random()*360,r=Math.random()*1.2+.4,d=(Math.random()*4).toFixed(2);return `<circle class="st" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(2)}" fill="#E8A75A" style="animation-delay:${d}s"/>`}).join('')}
+          ${Array.from({length:60},(_,i)=>{const x=Math.random()*600,y=Math.random()*360,r=Math.random()*1.2+.4,d=(Math.random()*4).toFixed(2);return `<circle class="st" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(2)}" fill="#3fb44a" style="animation-delay:${d}s"/>`}).join('')}
         </g>
         <g class="shoot">
-          <line class="sh sh1" x1="-60" y1="80" x2="40" y2="110" stroke="#E8A75A" stroke-width="1.4"/>
+          <line class="sh sh1" x1="-60" y1="80" x2="40" y2="110" stroke="#3fb44a" stroke-width="1.4"/>
           <line class="sh sh2" x1="-60" y1="160" x2="60" y2="200" stroke="#f3b56b" stroke-width="1.2"/>
         </g>
       </svg>`,
@@ -532,14 +532,14 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
         <defs><linearGradient id="pfdG" x1="0" x2="1" y2="1"><stop offset="0" stop-color="#2b1608"/><stop offset="1" stop-color="#8b4a1f"/></linearGradient></defs>
         <rect width="600" height="360" fill="url(#pfdG)"/>
         <g class="door-wrap">
-          <rect class="door" x="220" y="40" width="180" height="300" rx="4" fill="#5a2d15" stroke="#E8A75A" stroke-width="1.5"/>
-          <rect x="235" y="55" width="150" height="270" rx="2" fill="none" stroke="#E8A75A" stroke-width=".6" opacity=".4"/>
+          <rect class="door" x="220" y="40" width="180" height="300" rx="4" fill="#5a2d15" stroke="#3fb44a" stroke-width="1.5"/>
+          <rect x="235" y="55" width="150" height="270" rx="2" fill="none" stroke="#3fb44a" stroke-width=".6" opacity=".4"/>
           <path class="grain" d="M240 70v260M260 70v260M280 70v260M300 70v260M320 70v260M340 70v260M360 70v260M380 70v260" stroke="#3a1e10" stroke-width=".8" opacity=".4"/>
-          <circle class="knob" cx="376" cy="190" r="4" fill="#E8A75A"/>
+          <circle class="knob" cx="376" cy="190" r="4" fill="#3fb44a"/>
         </g>
         <g class="light">
           <path d="M0 0 L600 0 L600 360 L0 360 Z" fill="none"/>
-          <rect class="sweep" x="-200" y="-50" width="160" height="500" fill="#E8A75A" opacity=".12" transform="skewX(-20)"/>
+          <rect class="sweep" x="-200" y="-50" width="160" height="500" fill="#3fb44a" opacity=".12" transform="skewX(-20)"/>
         </g>
       </svg>`,
     ironwooddoor: `
@@ -553,7 +553,7 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
           <rect class="ly" x="60" y="204" width="480" height="40" fill="#9a4c20" opacity=".85"/>
           <rect class="ly" x="60" y="252" width="480" height="40" fill="#7a3b1a" opacity=".85"/>
         </g>
-        <g class="grainH" stroke="#E8A75A" stroke-width=".4" opacity=".4">
+        <g class="grainH" stroke="#3fb44a" stroke-width=".4" opacity=".4">
           <path d="M60 80h480M60 128h480M60 176h480M60 224h480M60 272h480"/>
         </g>
       </svg>`,
@@ -561,7 +561,7 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
       <svg class="poster" viewBox="0 0 600 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
         <defs><linearGradient id="ppfG" x1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f1208"/><stop offset="1" stop-color="#6f3a18"/></linearGradient></defs>
         <rect width="600" height="360" fill="url(#ppfG)"/>
-        <g class="ripples" fill="none" stroke="#E8A75A">
+        <g class="ripples" fill="none" stroke="#3fb44a">
           <circle class="rp" cx="180" cy="180" r="20" stroke-width="1.4"/>
           <circle class="rp" cx="180" cy="180" r="60" stroke-width="1.1" opacity=".7"/>
           <circle class="rp" cx="180" cy="180" r="110" stroke-width=".9" opacity=".5"/>
@@ -569,7 +569,7 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
           <circle class="rp2" cx="420" cy="220" r="56" stroke-width="1.1" opacity=".7"/>
           <circle class="rp2" cx="420" cy="220" r="100" stroke-width=".8" opacity=".45"/>
         </g>
-        <g class="droplets" fill="#E8A75A">
+        <g class="droplets" fill="#3fb44a">
           <ellipse class="dp" cx="180" cy="100" rx="4" ry="6"/>
           <ellipse class="dp dp2" cx="420" cy="140" rx="4" ry="6"/>
         </g>
@@ -579,16 +579,16 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
         <defs><linearGradient id="pbbG" x1="0" x2="1" y2="1"><stop offset="0" stop-color="#321a0c"/><stop offset="1" stop-color="#9a5526"/></linearGradient></defs>
         <rect width="600" height="360" fill="url(#pbbG)"/>
         <g class="battens">
-          ${Array.from({length:14},(_,i)=>{const x=20+i*42;return `<rect class="bt" x="${x}" y="60" width="32" height="240" fill="#7a3b1a" stroke="#E8A75A" stroke-width=".7" style="animation-delay:${(i*.08).toFixed(2)}s"/>`}).join('')}
+          ${Array.from({length:14},(_,i)=>{const x=20+i*42;return `<rect class="bt" x="${x}" y="60" width="32" height="240" fill="#7a3b1a" stroke="#3fb44a" stroke-width=".7" style="animation-delay:${(i*.08).toFixed(2)}s"/>`}).join('')}
         </g>
-        <rect x="10" y="54" width="580" height="4" fill="#E8A75A" opacity=".5"/>
-        <rect x="10" y="302" width="580" height="4" fill="#E8A75A" opacity=".5"/>
+        <rect x="10" y="54" width="580" height="4" fill="#3fb44a" opacity=".5"/>
+        <rect x="10" y="302" width="580" height="4" fill="#3fb44a" opacity=".5"/>
       </svg>`,
     flexi: `
       <svg class="poster" viewBox="0 0 600 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
         <defs><linearGradient id="pflG" x1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a1608"/><stop offset="1" stop-color="#bf7032"/></linearGradient></defs>
         <rect width="600" height="360" fill="url(#pflG)"/>
-        <g class="flex" fill="none" stroke="#E8A75A" stroke-width="2">
+        <g class="flex" fill="none" stroke="#3fb44a" stroke-width="2">
           <path class="fx fx1" d="M40 180 Q 200 60 300 180 T 560 180" opacity=".9"/>
           <path class="fx fx2" d="M40 200 Q 200 80 300 200 T 560 200" opacity=".6"/>
           <path class="fx fx3" d="M40 220 Q 200 100 300 220 T 560 220" opacity=".4"/>
