@@ -138,7 +138,7 @@ html[data-theme="day"] .theme-toggle .ic-moon{transform:translateY(-40px) rotate
 .hero{
   position:relative;
   min-height:100vh;
-  background: radial-gradient(ellipse at 20% 30%, #4a2412 0%, #2a160a 55%, #140802 100%);
+  background: radial-gradient(ellipse at 20% 30%, #103a1d 0%, #0a2412 55%, #04120a 100%);
   overflow:hidden;
   display:flex;align-items:center;
   padding:0 44px;
@@ -149,7 +149,7 @@ html[data-theme="day"] .theme-toggle .ic-moon{transform:translateY(-40px) rotate
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 .9 0 0 0 0 .65 0 0 0 0 .35 0 0 0 .15 0'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
   opacity:.18;mix-blend-mode:overlay;
 }
-.hero-vignette{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg, rgba(15,6,2,.92) 0%, rgba(15,6,2,.55) 30%, rgba(15,6,2,0) 55%, rgba(15,6,2,0) 100%), linear-gradient(180deg, rgba(15,6,2,.4) 0%, transparent 20%, transparent 70%, rgba(15,6,2,.6) 100%)}
+.hero-vignette{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg, rgba(4,18,10,.92) 0%, rgba(4,18,10,.55) 30%, rgba(4,18,10,0) 55%, rgba(4,18,10,0) 100%), linear-gradient(180deg, rgba(4,18,10,.4) 0%, transparent 20%, transparent 70%, rgba(4,18,10,.6) 100%)}
 
 .hero-content{position:relative;z-index:3;max-width:1280px;width:100%;margin:0 auto;padding:120px 0 80px}
 .hero-eyebrow{
