@@ -661,3 +661,160 @@ html[data-theme="day"] .footer{background:#1a0d06}
 @media (prefers-reduced-motion: reduce){
   .poster *{animation:none !important}
 }
+
+/* ============ PALETTE SWITCHER ============ */
+.palette-wrap{position:relative;margin-right:10px}
+.palette-toggle{background:none;border:1px solid currentColor;border-radius:999px;width:40px;height:40px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;color:inherit;opacity:.85;transition:opacity .25s,transform .35s}
+.palette-toggle:hover{opacity:1;transform:rotate(-10deg)}
+.palette-toggle svg{width:18px;height:18px}
+.palette-pop{position:absolute;top:52px;right:0;background:rgba(20,11,5,.96);backdrop-filter:blur(14px);border:1px solid rgba(232,167,90,.25);border-radius:16px;padding:14px 14px 12px;min-width:240px;box-shadow:0 20px 60px -10px rgba(0,0,0,.6);opacity:0;visibility:hidden;transform:translateY(-6px) scale(.96);transform-origin:top right;transition:opacity .25s,transform .25s,visibility .25s;z-index:90}
+html[data-theme="day"] .palette-pop{background:rgba(255,248,228,.98);border-color:rgba(122,59,26,.25);box-shadow:0 20px 60px -10px rgba(60,30,10,.25)}
+.palette-pop.open{opacity:1;visibility:visible;transform:none}
+.palette-pop-title{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);margin-bottom:10px;opacity:.9}
+.palette-swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.sw{position:relative;width:48px;height:48px;border-radius:14px;border:2px solid transparent;background:linear-gradient(135deg,var(--c2) 0% 50%,var(--c1) 50% 100%);cursor:pointer;padding:0;transition:transform .25s,border-color .25s,box-shadow .25s}
+.sw:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 8px 22px -6px rgba(0,0,0,.5)}
+.sw span{position:absolute;inset:auto 4px 4px auto;width:14px;height:14px;border-radius:50%;background:#fff;opacity:0;transform:scale(.4);transition:opacity .25s,transform .25s;box-shadow:0 0 0 2px var(--c2)}
+.sw span::after{content:"";position:absolute;left:4px;top:2px;width:5px;height:8px;border:solid var(--c2);border-width:0 2px 2px 0;transform:rotate(45deg)}
+.sw.active{border-color:var(--c1)}
+.sw.active span{opacity:1;transform:scale(1)}
+@media (max-width:760px){
+  .palette-pop{right:-60px}
+}
+
+/* ============ PALETTE DEFINITIONS ============ */
+/* default (amber) lives in :root above */
+
+html[data-palette="emerald"]{
+  --amber:#d4a655; --amber-2:#b8893d; --amber-3:#8a6628;
+  --wood-1:#0a1f18; --wood-2:#0f2a22; --wood-3:#15392f; --wood-4:#1f5040;
+  --dark-bg:#0a1f18; --dark-bg-2:#13362b;
+  --section-dark:#0f2a22;
+  --section-dark-grad:linear-gradient(180deg,#0a1f18 0%,#13362b 100%);
+  --products-grad:linear-gradient(180deg,#0a1f18,#06140f);
+  --nav-bg:rgba(8,22,16,.78);
+}
+html[data-theme="day"][data-palette="emerald"]{
+  --paper-bg:#f1efe2; --paper-ink:#0f2a22;
+  --section-paper:#f1efe2; --section-dark:#e0e6d2;
+  --section-dark-grad:linear-gradient(180deg,#e8ecd9 0%,#d2dcb6 100%);
+  --products-grad:linear-gradient(180deg,#e0e6d2,#cdd9b2);
+  --cream:#0f2a22; --cream-2:#1f3d33;
+  --nav-bg:rgba(241,239,226,.85); --nav-ink:#0f2a22;
+  --card-bg:#f8f6ea; --card-border:rgba(15,42,34,.22);
+  --shimmer-color:rgba(212,166,85,.22);
+}
+
+html[data-palette="copper"]{
+  --amber:#e0863c; --amber-2:#c46a23; --amber-3:#a05217;
+  --wood-1:#08111f; --wood-2:#0e1626; --wood-3:#162236; --wood-4:#243456;
+  --dark-bg:#08111f; --dark-bg-2:#142036;
+  --section-dark:#0e1626;
+  --section-dark-grad:linear-gradient(180deg,#08111f 0%,#142036 100%);
+  --products-grad:linear-gradient(180deg,#08111f,#040814);
+  --nav-bg:rgba(8,17,31,.78);
+}
+html[data-theme="day"][data-palette="copper"]{
+  --paper-bg:#f4ede0; --paper-ink:#0e1626;
+  --section-paper:#f4ede0; --section-dark:#dfe4ee;
+  --section-dark-grad:linear-gradient(180deg,#e6ebf3 0%,#cdd5e3 100%);
+  --products-grad:linear-gradient(180deg,#dfe4ee,#c4cee0);
+  --cream:#0e1626; --cream-2:#1c2640;
+  --nav-bg:rgba(244,237,224,.85); --nav-ink:#0e1626;
+  --card-bg:#fbf5e8; --card-border:rgba(14,22,38,.22);
+}
+
+html[data-palette="brass"]{
+  --amber:#d2a14b; --amber-2:#b8893d; --amber-3:#8e6628;
+  --wood-1:#0e0905; --wood-2:#1a120b; --wood-3:#251910; --wood-4:#3a2716;
+  --dark-bg:#0e0905; --dark-bg-2:#1a120b;
+  --section-dark:#1a120b;
+  --section-dark-grad:linear-gradient(180deg,#0e0905 0%,#1f1610 100%);
+  --products-grad:linear-gradient(180deg,#0e0905,#06040200);
+  --nav-bg:rgba(10,6,3,.82);
+}
+html[data-theme="day"][data-palette="brass"]{
+  --paper-bg:#efe6d3; --paper-ink:#1a120b;
+  --section-paper:#efe6d3; --section-dark:#dfd4ba;
+  --section-dark-grad:linear-gradient(180deg,#e8dcc0 0%,#d3c39e 100%);
+  --products-grad:linear-gradient(180deg,#dfd4ba,#c8b890);
+  --cream:#1a120b; --cream-2:#2a1f12;
+  --nav-bg:rgba(239,230,211,.85); --nav-ink:#1a120b;
+  --card-bg:#f8efd9; --card-border:rgba(26,18,11,.22);
+}
+
+html[data-palette="plum"]{
+  --amber:#e2c071; --amber-2:#c4a358; --amber-3:#9c7f3e;
+  --wood-1:#150d1d; --wood-2:#1f1228; --wood-3:#2c1a36; --wood-4:#43274e;
+  --dark-bg:#150d1d; --dark-bg-2:#291637;
+  --section-dark:#1f1228;
+  --section-dark-grad:linear-gradient(180deg,#150d1d 0%,#291637 100%);
+  --products-grad:linear-gradient(180deg,#150d1d,#0a0510);
+  --nav-bg:rgba(21,13,29,.78);
+}
+html[data-theme="day"][data-palette="plum"]{
+  --paper-bg:#f3ecdc; --paper-ink:#1f1228;
+  --section-paper:#f3ecdc; --section-dark:#e3d6e6;
+  --section-dark-grad:linear-gradient(180deg,#ebdfee 0%,#d2bcd8 100%);
+  --products-grad:linear-gradient(180deg,#e3d6e6,#cdb4d4);
+  --cream:#1f1228; --cream-2:#34203f;
+  --nav-bg:rgba(243,236,220,.85); --nav-ink:#1f1228;
+  --card-bg:#faf2e0; --card-border:rgba(31,18,40,.22);
+}
+
+html[data-palette="ocean"]{
+  --amber:#d9b482; --amber-2:#b89464; --amber-3:#8e7148;
+  --wood-1:#14202a; --wood-2:#1e2f3a; --wood-3:#294150; --wood-4:#3a5b70;
+  --dark-bg:#14202a; --dark-bg-2:#243a4a;
+  --section-dark:#1e2f3a;
+  --section-dark-grad:linear-gradient(180deg,#14202a 0%,#243a4a 100%);
+  --products-grad:linear-gradient(180deg,#14202a,#0a131a);
+  --nav-bg:rgba(20,32,42,.78);
+}
+html[data-theme="day"][data-palette="ocean"]{
+  --paper-bg:#f5f1ea; --paper-ink:#1e2f3a;
+  --section-paper:#f5f1ea; --section-dark:#dde6ec;
+  --section-dark-grad:linear-gradient(180deg,#e4ecf1 0%,#c5d4dc 100%);
+  --products-grad:linear-gradient(180deg,#dde6ec,#bdcdd6);
+  --cream:#1e2f3a; --cream-2:#314554;
+  --nav-bg:rgba(245,241,234,.85); --nav-ink:#1e2f3a;
+  --card-bg:#fbf7ef; --card-border:rgba(30,47,58,.22);
+}
+
+html[data-palette="rose"]{
+  --amber:#e3a07a; --amber-2:#c47e58; --amber-3:#9a5b3a;
+  --wood-1:#1f0e10; --wood-2:#3a1a1e; --wood-3:#52262c; --wood-4:#73393f;
+  --dark-bg:#1f0e10; --dark-bg-2:#3a1a1e;
+  --section-dark:#3a1a1e;
+  --section-dark-grad:linear-gradient(180deg,#1f0e10 0%,#3a1a1e 100%);
+  --products-grad:linear-gradient(180deg,#1f0e10,#11070800);
+  --nav-bg:rgba(31,14,16,.78);
+}
+html[data-theme="day"][data-palette="rose"]{
+  --paper-bg:#f6ebe1; --paper-ink:#3a1a1e;
+  --section-paper:#f6ebe1; --section-dark:#ecd4cb;
+  --section-dark-grad:linear-gradient(180deg,#f0ddd3 0%,#e0b8aa 100%);
+  --products-grad:linear-gradient(180deg,#ecd4cb,#dbafa0);
+  --cream:#3a1a1e; --cream-2:#54262c;
+  --nav-bg:rgba(246,235,225,.85); --nav-ink:#3a1a1e;
+  --card-bg:#fbf0e5; --card-border:rgba(58,26,30,.22);
+}
+
+html[data-palette="mono"]{
+  --amber:#E8A75A; --amber-2:#d7873a; --amber-3:#c46a23;
+  --wood-1:#050505; --wood-2:#0a0a0a; --wood-3:#121212; --wood-4:#1c1c1c;
+  --dark-bg:#050505; --dark-bg-2:#101010;
+  --section-dark:#0a0a0a;
+  --section-dark-grad:linear-gradient(180deg,#050505 0%,#111111 100%);
+  --products-grad:linear-gradient(180deg,#050505,#000);
+  --nav-bg:rgba(0,0,0,.82);
+}
+html[data-theme="day"][data-palette="mono"]{
+  --paper-bg:#fafafa; --paper-ink:#0a0a0a;
+  --section-paper:#fafafa; --section-dark:#eaeaea;
+  --section-dark-grad:linear-gradient(180deg,#f0f0f0 0%,#dadada 100%);
+  --products-grad:linear-gradient(180deg,#eaeaea,#c8c8c8);
+  --cream:#0a0a0a; --cream-2:#222;
+  --nav-bg:rgba(250,250,250,.85); --nav-ink:#0a0a0a;
+  --card-bg:#fff; --card-border:rgba(0,0,0,.14);
+}

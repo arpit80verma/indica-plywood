@@ -300,6 +300,36 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   });
 })();
 
+/* ============ PALETTE SWITCHER ============ */
+(function(){
+  const root = document.documentElement;
+  const btn  = document.getElementById('paletteToggle');
+  const pop  = document.getElementById('palettePop');
+  if(!btn || !pop) return;
+  const swatches = pop.querySelectorAll('.sw');
+  const saved = localStorage.getItem('indica-palette') || 'amber';
+  apply(saved);
+  function apply(name){
+    if(name && name !== 'amber') root.setAttribute('data-palette', name);
+    else root.removeAttribute('data-palette');
+    swatches.forEach(s => s.classList.toggle('active', s.dataset.palette === (name||'amber')));
+  }
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    pop.classList.toggle('open');
+  });
+  swatches.forEach(s => s.addEventListener('click', () => {
+    const name = s.dataset.palette;
+    apply(name);
+    localStorage.setItem('indica-palette', name);
+    setTimeout(()=>pop.classList.remove('open'), 220);
+  }));
+  document.addEventListener('click', e => {
+    if(!pop.contains(e.target) && e.target !== btn) pop.classList.remove('open');
+  });
+  document.addEventListener('keydown', e => { if(e.key==='Escape') pop.classList.remove('open'); });
+})();
+
 /* ============ PRODUCT CARD CURSOR SHIMMER ============ */
 (function(){
   const cards = document.querySelectorAll('.product');
