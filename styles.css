@@ -930,5 +930,5 @@ html[data-theme="day"] .india-map-wrap .india-pins text{fill:#3a1e0c;stroke:rgba
 
 
 /* Logo image overrides */
-.brand-mark img{display:block;border-radius:8px;object-fit:cover;background:#fff}
+.brand-mark img{display:block;border-radius:8px;object-fit:contain;background:#fff;padding:3px}
 .footer .brand-mark img{border-radius:10px}
