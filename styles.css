@@ -1091,3 +1091,15 @@ html[data-theme="day"] body{background:#ffffff;color:#0f1a12}
 .footer .brand-name,
 .footer .brand-name.big{color:#ffffff !important}
 .footer .brand-name em{color:var(--amber) !important}
+
+/* Nav brand: white over dark hero, dark after scroll (white nav bg) */
+.nav .brand,
+.nav .brand-name{color:#ffffff !important}
+.nav .brand-name em{color:var(--amber) !important}
+.nav .nav-links a{color:#ffffff !important}
+.nav.scrolled .brand,
+.nav.scrolled .brand-name{color:#0f1a12 !important}
+.nav.scrolled .brand-name em{color:var(--amber-3) !important}
+.nav.scrolled .nav-links a{color:#0f1a12 !important}
+.nav .theme-toggle,.nav .palette-toggle{color:#ffffff;border-color:rgba(255,255,255,.4)}
+.nav.scrolled .theme-toggle,.nav.scrolled .palette-toggle{color:#0f1a12;border-color:rgba(15,26,18,.3)}
