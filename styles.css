@@ -998,7 +998,10 @@ body{background:#ffffff;color:var(--ink)}
 .section-title.light,.section-head.light .section-title{color:#0f3a1d}
 .section-head .kicker,.section-head .kicker.light{color:var(--amber-3)}
 .section-head.light{color:#0f1a12}
-.section-lede{color:#3a4a3e}
+.section-lede{color:#000;opacity:1;font-weight:450}
+.about-text p,.feat p,.product p,.product .product-body p,.presence-text p,.tm-block p,.tm-lede,.certs-text p,.certs p,.cert-card p,.scrolly-caption .sc-body,.process p,.feat-desc{color:#000 !important}
+.section-head.light{color:#000}
+.section-head.light .section-lede{color:#000}
 
 /* About */
 .about{background:#ffffff;color:#0f1a12}
@@ -1080,3 +1083,11 @@ html[data-theme="day"]{
   --shimmer-color:rgba(63,180,74,.18);
 }
 html[data-theme="day"] body{background:#ffffff;color:#0f1a12}
+
+.cert span{color:#000 !important;opacity:1}
+.cert b{color:var(--amber-3) !important}
+
+.footer .brand,
+.footer .brand-name,
+.footer .brand-name.big{color:#ffffff !important}
+.footer .brand-name em{color:var(--amber) !important}
