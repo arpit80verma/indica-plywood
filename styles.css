@@ -1103,3 +1103,10 @@ html[data-theme="day"] body{background:#ffffff;color:#0f1a12}
 .nav.scrolled .nav-links a{color:#0f1a12 !important}
 .nav .theme-toggle,.nav .palette-toggle{color:#ffffff;border-color:rgba(255,255,255,.4)}
 .nav.scrolled .theme-toggle,.nav.scrolled .palette-toggle{color:#0f1a12;border-color:rgba(15,26,18,.3)}
+
+/* Contact section: dark bg, keep title white */
+.contact .section-title,
+.contact .section-title.light{color:#ffffff !important}
+.contact .section-title em{color:var(--amber) !important}
+.contact .kicker,.contact .kicker.light{color:var(--amber) !important}
+.contact .section-lede,.contact p{color:rgba(255,255,255,.85) !important}
