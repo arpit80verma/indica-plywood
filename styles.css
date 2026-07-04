@@ -1110,3 +1110,7 @@ html[data-theme="day"] body{background:#ffffff;color:#0f1a12}
 .contact .section-title em{color:var(--amber) !important}
 .contact .kicker,.contact .kicker.light{color:var(--amber) !important}
 .contact .section-lede,.contact p{color:rgba(255,255,255,.85) !important}
+
+/* Hero ghost button: white on dark hero */
+.hero .btn-ghost{color:#ffffff !important;border-color:rgba(255,255,255,.5) !important;background:transparent}
+.hero .btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#ffffff !important}
