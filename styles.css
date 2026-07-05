@@ -1114,3 +1114,22 @@ html[data-theme="day"] body{background:#ffffff;color:#0f1a12}
 /* Hero ghost button: white on dark hero */
 .hero .btn-ghost{color:#ffffff !important;border-color:rgba(255,255,255,.5) !important;background:transparent}
 .hero .btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#ffffff !important}
+
+/* ============ VISION & MISSION ============ */
+.vm{background:#ffffff;color:#0f1a12;padding:120px 44px;position:relative;overflow:hidden}
+.vm::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 80% 0%,rgba(63,180,74,.08),transparent 60%),radial-gradient(ellipse at 0% 100%,rgba(63,180,74,.06),transparent 55%);pointer-events:none}
+.vm-inner{max-width:1280px;margin:0 auto;position:relative;z-index:1}
+.vm-head{max-width:760px;margin:0 auto 60px;text-align:center}
+.vm-head .kicker{display:inline-block;font-size:12px;letter-spacing:.34em;color:var(--amber-3);text-transform:uppercase;margin-bottom:18px;font-weight:600}
+.vm-head .section-title{margin:0 auto;color:#0f3a1d}
+.vm-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.vm-card{position:relative;background:#ffffff;border:1px solid rgba(63,180,74,.25);border-radius:24px;padding:48px 40px;box-shadow:0 1px 0 rgba(15,58,29,.03);transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s,border-color .5s;overflow:hidden}
+.vm-card::after{content:"";position:absolute;inset:auto -30% -30% auto;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(63,180,74,.16) 0%,transparent 60%);opacity:0;transition:opacity .5s}
+.vm-card:hover{transform:translateY(-4px);border-color:var(--amber);box-shadow:0 24px 60px rgba(15,58,29,.1)}
+.vm-card:hover::after{opacity:1}
+.vm-icon{width:64px;height:64px;display:flex;align-items:center;justify-content:center;border-radius:18px;background:linear-gradient(135deg,var(--amber),var(--amber-2));color:#ffffff;margin-bottom:24px;position:relative;z-index:1}
+.vm-icon svg{width:32px;height:32px}
+.vm-tag{display:inline-block;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--amber-3);font-weight:600;margin-bottom:14px;padding:6px 12px;background:rgba(63,180,74,.1);border:1px solid rgba(63,180,74,.3);border-radius:999px;position:relative;z-index:1}
+.vm-card h3{font-family:'Fraunces',serif;font-weight:600;font-size:26px;line-height:1.2;letter-spacing:-.01em;color:#0f3a1d;margin-bottom:16px;position:relative;z-index:1}
+.vm-card p{font-size:16px;line-height:1.65;color:#14271a;position:relative;z-index:1}
+@media (max-width:900px){.vm-grid{grid-template-columns:1fr;gap:20px}.vm{padding:80px 24px}.vm-card{padding:36px 28px}.vm-card h3{font-size:22px}}
