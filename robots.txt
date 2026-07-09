@@ -1,0 +1,7 @@
+# https://indicaplywood.com/robots.txt
+User-agent: *
+Allow: /
+Disallow: /assets/certs/
+
+# Sitemap
+Sitemap: https://indicaplywood.com/sitemap.xml
