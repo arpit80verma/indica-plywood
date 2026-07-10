@@ -460,10 +460,10 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   // pause when not visible (saves CPU & avoids progress skipping when offscreen)
   const io2 = new IntersectionObserver((entries) => {
     entries.forEach(e => {
-      inView = e.isIntersecting && e.intersectionRatio > 0.25;
+      inView = e.isIntersecting;
       if(inView) resetTimer(); else stopTimer();
     });
-  }, { threshold: [0, 0.25, 0.5] });
+  }, { threshold: 0, rootMargin: '0px 0px -20% 0px' });
   io2.observe(wrap);
 
   // respect reduced motion: stop autoplay
