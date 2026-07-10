@@ -289,8 +289,8 @@ section{padding:56px 44px;position:relative}
 /* ============ CERTS ============ */
 .certs{background:var(--section-dark);color:var(--dark-ink);padding:56px 44px}
 .certs-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:start}
-.tm-block{grid-column:1/-1;margin-top:100px;border-top:1px solid rgba(63,180,74,.18);padding-top:80px}
-.tm-head{max-width:760px;margin-bottom:42px}
+.tm-block{grid-column:1/-1;margin-top:48px;border-top:1px solid rgba(63,180,74,.18);padding-top:36px}
+.tm-head{max-width:760px;margin-bottom:28px}
 .tm-title{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(28px,3.4vw,42px);line-height:1.1;letter-spacing:-.02em;margin-top:14px;color:var(--cream)}
 .tm-title em{font-style:italic;color:var(--amber)}
 .tm-lede{color:rgba(246,236,217,.65);margin-top:16px;max-width:62ch;font-size:16px;line-height:1.6}
@@ -397,7 +397,7 @@ section{padding:56px 44px;position:relative}
   .tm-grid{grid-template-columns:1fr}
   .spec-strip{grid-template-columns:1fr}
   .spec-chip{border-right:none;border-bottom:1px solid rgba(63,180,74,.18)}
-  .tm-block{margin-top:60px;padding-top:50px}
+  .tm-block{margin-top:36px;padding-top:28px}
   .product.featured{grid-column:auto}
   .steps{grid-template-columns:1fr}
   .about-stats{grid-template-columns:1fr}
