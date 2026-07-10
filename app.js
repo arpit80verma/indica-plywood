@@ -367,8 +367,7 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   const tmpl    = document.getElementById('scStepData');
   const steps   = Array.from(tmpl.content.querySelectorAll('[data-step]'));
   const total   = steps.length;
-  const INTERVAL = 2000;
-  const FIRST_DELAY = 900;
+  const INTERVAL = 1800;
 
   let current = -1;
   let timer = null;
@@ -410,14 +409,9 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
   function startTimer(){
     stopTimer();
-    if(!(playing && inView && !hovered)) return;
-    // fire first advance sooner, then settle to INTERVAL
-    timer = setTimeout(function loop(){
-      tick();
-      timer = setInterval(tick, INTERVAL);
-    }, FIRST_DELAY);
+    if(playing && inView && !hovered) timer = setInterval(tick, INTERVAL);
   }
-  function stopTimer(){ if(timer){ clearInterval(timer); clearTimeout(timer); timer = null; } }
+  function stopTimer(){ if(timer){ clearInterval(timer); timer = null; } }
   function resetTimer(){ if(playing && inView && !hovered) startTimer(); }
 
   // controls
@@ -478,8 +472,9 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     playBtn.setAttribute('data-playing','false');
   }
 
-  // init
+  // init: show step 1, then kick autoplay after a short beat
   setStep(0, 1);
+  setTimeout(() => { if(inView) tick(); resetTimer(); }, 1200);
 })();
 
 
