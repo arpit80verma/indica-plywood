@@ -367,7 +367,7 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   const tmpl    = document.getElementById('scStepData');
   const steps   = Array.from(tmpl.content.querySelectorAll('[data-step]'));
   const total   = steps.length;
-  const INTERVAL = 4800;
+  const INTERVAL = 2600;
 
   let current = -1;
   let timer = null;
