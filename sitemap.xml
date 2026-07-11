@@ -2,54 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://indicaplywood.com/</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://indicaplywood.com/#about</loc>
-    <lastmod>2026-07-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://indicaplywood.com/pages/privacy.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://indicaplywood.com/#vision</loc>
-    <lastmod>2026-07-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://indicaplywood.com/pages/terms.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://indicaplywood.com/#factory</loc>
-    <lastmod>2026-07-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://indicaplywood.com/pages/refund.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://indicaplywood.com/#products</loc>
-    <lastmod>2026-07-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://indicaplywood.com/pages/disclaimer.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
   </url>
-  <url>
-    <loc>https://indicaplywood.com/#certifications</loc>
-    <lastmod>2026-07-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://indicaplywood.com/#presence</loc>
-    <lastmod>2026-07-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://indicaplywood.com/#contact</loc>
-    <lastmod>2026-07-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url><loc>https://indicaplywood.com/pages/privacy.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://indicaplywood.com/pages/terms.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://indicaplywood.com/pages/refund.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://indicaplywood.com/pages/disclaimer.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
 </urlset>
