@@ -282,7 +282,9 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     requestAnimationFrame(animate);
   }
   animate();
-  window.__DBG = { scene, camera, group, sheets, renderer };
+  if (location.hostname === 'localhost' || location.hostname.endsWith('.exe.xyz')) {
+    window.__DBG = { scene, camera, group, sheets, renderer };
+  }
 })();
 
 
@@ -615,9 +617,13 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   const form = document.getElementById('enquireForm');
   let opened = false;
 
+  let lastFocused = null;
+  const FOCUSABLE = 'a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])';
+
   function open(){
     if(opened) return;
     opened = true;
+    lastFocused = document.activeElement;
     modal.classList.add('open');
     modal.setAttribute('aria-hidden','false');
     document.body.classList.add('modal-open');
@@ -628,10 +634,21 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     modal.setAttribute('aria-hidden','true');
     document.body.classList.remove('modal-open');
     opened = false;
+    if(lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
   }
 
   modal.addEventListener('click', e=>{ if(e.target.matches('[data-close]')) close(); });
-  document.addEventListener('keydown', e=>{ if(e.key==='Escape' && modal.classList.contains('open')) close(); });
+  document.addEventListener('keydown', e=>{
+    if(!modal.classList.contains('open')) return;
+    if(e.key === 'Escape'){ close(); return; }
+    if(e.key === 'Tab'){
+      const nodes = Array.from(modal.querySelectorAll(FOCUSABLE)).filter(n => n.offsetParent !== null);
+      if(!nodes.length) return;
+      const first = nodes[0], last = nodes[nodes.length-1];
+      if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+      else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+    }
+  });
 
   if(form){
     form.addEventListener('submit', e=>{
